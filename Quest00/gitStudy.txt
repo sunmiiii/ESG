@@ -100,3 +100,7 @@ git clone 명령어는 원격 저장소의 복사본을 의미한다. 따라서 
 코드 변경 이력들이 원격 저장소로 이송된다. (https://www.daleseo.com/git-push/)
 
 https://beingdesigner.tistory.com/m/40
+
+
+*** 내가 원하는 파일만 수정해서 다시 올릴려면 git add 원하는파일.확장자 후 commit하면 내가 수정한 것만 push됨!
+
