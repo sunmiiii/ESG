@@ -1,0 +1,3 @@
+test success!
+
+commit --amend까지!
