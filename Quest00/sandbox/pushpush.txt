@@ -1,5 +1,4 @@
 test success!
-<<<<<<< HEAD
 
 commit --amend까지!
 
