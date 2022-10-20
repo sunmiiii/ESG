@@ -142,10 +142,23 @@ sandbox="" 절대적으로 필요한 경우(속성 값 내부) 권한을 하나�
 
 => 동일한 속성을 준다면 <colgroup> <col 주고싶은 속성 /> </colgroup> 사용 
 
+** 들여쓰기로 태그 간의 포함관계를 분리해주는 게 가독성에 좋다!
+<br> 엔터공백
+&nbsp 스페이스공백
+=> html이 인식하는 공백은 스페이스 한번!나머지는 우리가 구분해줘야한다!
+<mark> 글자에 형광펜 효과 주기!
 
+<meta name =
+author - 문서 제작자(content="선미")
+description - 페이지에 대한 요약, 브라우저 즐겨찾기 페이지의 기본 설명 값(content="페이지요약")
+keywords - 페이지의 콘텐츠와 관련된, 쉼표로 구분한 키워드 목록(content="강아지,고양이,호랑이)
 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		호환성관련설정		인터넷익스플로의 최신버전에 호환성을 맞추겠다
 
-
+기기 별 뷰포트가 다르기때문에 발생하는 배율 문제에 대응하기위해 meta태그를 통해 뷰포트 관련 설정 추가할 수 있음!
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	뷰포트의 너비를 단말기 너비에 맞추고, 초기 배율을 1로 한다!
 
 
 
