@@ -7,45 +7,224 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!-- 배율맞추기위해서 작성-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- 페이지 설명-->
+		<meta name="description" content="네이버모바일">
 	</head>
 	<body>
-		<div>
-			<img src="" alt="">카테고리
-			<img src="" alt="">QR체크인
-			<img src="" alt="">네이버페이
-			<img src="" alt="">문서
-		</div>
+	<!-- 바디 전체를 감싸는 div-->
+	<div>
 		<header>
 			<!-- TODO: 어디까지를 header로 보는 것이 좋을까요? -->
-			<h1>naver 로고</h1>
+			<!-- 맨 위 아이콘 영역-->
 			<div>
 				<div>
-					<input type="text" placeholder="검색어를 입력해주세요.">
-				</div>	
+					<a href="#"> <img src="" alt=""> 카테고리 </a>
+				</div>
 				<div>
-					<img src="#" alt="">마이크
-					<img src="#" alt="">카메라
-					<img src="#" alt="">지도
+					<a href="#"> <img src="" alt=""> QR체크인 </a>
+				</div>
+				<div>
+					<a href="#"> <img src="" alt=""> 네이버페이 </a>
+				</div>
+				<div>
+					<a href="#"> <img src="" alt=""> 메일 </a>
 				</div>
 			</div>
 
+			<!-- 로고 및 검색창-->
 			<div>
-				<img>뉴스판
-				<img>경제지표판
-				<img>연예판
-				<img>트렌드판
-				<br>
-				<img>메일판
-				<img>카페판
-				<img>블로그판
-				<img>더보기
+				<a href="#">
+					<img src="" alt=""> 네이버로고
+				</a>
+			</div>
+
+			<div>
+				<div>
+					<form action="#">
+					<input type="text" placeholder="검색어를 입력해주세요.">
+					</form>
+					<button>마이크</button>
+					<button>카메라</button>
+					<button>지도</button>
+				</div>
+			</div>
+
+			<!-- 검색창 밑 아이콘들-->
+			<div>
+				<ul>
+					<li>
+						<a>
+							<div>
+								<img src="https://s.pstatic.net/static/www/mobile/edit/20220303_0/upload_1646297330983vHTOQ.png" alt="">
+							</div>
+							<p>뉴스판</p>
+						</a>
+					</li>
+					<li>
+						<a>
+							<div>
+								<img src="https://s.pstatic.net/static/www/mobile/edit/2021/0426/upload_16194098613516y6da.png" alt="">
+							</div>
+							<p>경제지표판</p>
+						</a>
+					</li>
+					<li>
+						<a>
+							<div>
+								<img src="https://s.pstatic.net/static/www/mobile/edit/20220303_0/upload_1646297330983vHTOQ.png" alt="">
+							</div>
+							<p>연예판</p>
+						</a>
+					</li>
+					<li>
+						<a>
+							<div>
+								<img src="https://s.pstatic.net/static/www/mobile/edit/20220303_0/upload_1646297330983vHTOQ.png" alt="">
+							</div>
+							<p>트렌드판</p>
+						</a>
+					</li>
+					<li>
+						<a>
+							<div>
+								<img src="https://s.pstatic.net/static/www/mobile/edit/2020/0319/mobile_19411917574.png" alt="">
+							</div>
+							<p>메일</p>
+						</a>
+					</li>
+					<li>
+						<a>
+							<div>
+								<img src="https://s.pstatic.net/static/www/mobile/edit/2020/0319/mobile_191015178706.png" alt="">
+							</div>
+							<p>카페</p>
+						</a>
+					</li>
+					<li>
+						<a>
+							<div>
+								<img src="https://s.pstatic.net/static/www/mobile/edit/2020/0319/mobile_181505455420.png" alt="">
+							</div>
+							<p>블로그</p>
+						</a>
+					</li>
+					<li>
+						<a>
+							<div>
+								<img src="https://s.pstatic.net/static/www/mobile/edit/2021/0427/upload_1619497854375Q53rw.png" alt="">
+							</div>
+						</a>
+					</li>
+				</ul>
 			</div>
 			
 		</header>
 
+
 		<section class="main">
 			<!-- TODO: main은 어떤 식으로 나눌 수 있을까요? -->
-			
+			<!-- 오늘 날씨!-->
+			<div>
+				<div class="">
+					<strong> <em>10º</em> 맑음</strong>
+					<p>어제보다 2º높아요</p>
+				</div>
+				<div>
+
+				</div>
+			</div>
+			<!-- 이번주 날씨 -->
+			<div>
+				<a>
+					<strong>날씨</strong>
+					<p>광주광역시</p>
+				</a>
+				<div>
+					<ul>
+						<li><a href="#">시간대별 날씨</a></li>
+						<li><a href="#">시간대별 미세먼지</a></li>
+						<li><a href="#">주간 날씨</a></li>
+						<li><a href="#">주간 미세먼지</a></li>
+					</ul>
+				</div>
+				<!-- 요일별 날씨를 감싸는 div-->
+				<div> 
+					<a href="#">
+						<ul>
+							<li><div>어제</div></li>
+							<li><div>오늘</div></li>
+							<li><div>월</div></li>
+							<li><div>화</div></li>
+							<li><div>수</div></li>
+							<li><div>목</div></li>
+							<li><div>금</div></li>
+							<li><div>토</div></li>
+							<li><div>일</div></li>
+						</ul>
+					</a>  
+				</div>
+			</div>
+
+			<!-- 코로나현황-->
+			<div>
+				<div>
+					<img src="" alt=""><strong>코로나19</strong>
+				</div>
+					<p>국내외 확진 현황</p>
+
+				<div>
+					<img src="" alt=""><strong>코로나19 팩트체크</strong>
+				</div>
+					<p>백신 정보 팩트는?</p>
+			</div>
+
+			<!-- 이미지 한줄-->
+			<div>
+				<img src="" alt=""> 제102주년 대한민국 임시정부 수립일
+			</div>
+
+			<!-- 앱 전환-->
+			<div>
+				<a>
+					<img src="" alt=""> <p>앱으로 <strong>새로운 네이버</strong>를 더 쾌적하게 사용해 보세요.</p>
+					<button>앱 사용하기</button>
+				</a>
+			</div>
+
+			<!-- 웹툰 -->
+			<div>
+				<div>
+					<strong>웹툰</strong>
+				</div>
+				<div>
+					<button><img src="" alt="">펼치기</button>
+				</div>
+			</div>
+
+			<!-- 인기 주제 판! -->
+			<div>
+				<div>
+					<div>
+						<strong>인기 주제 판을 확인해 보세요!</strong>
+					</div>
+					<div>
+						<p>판관리</p>
+					</div>
+				</div>
+				<div>
+					<ul>
+						<li> <img src="" alt=""> 영화판 <button><img src="" alt="">펼치기</li>
+						<li> <img src="" alt=""> 뿜판 <button><img src="" alt="">펼치기</li>
+						<li> <img src="" alt=""> 웹툰판 <button><img src="" alt="">펼치기</li>
+						<li> <img src="" alt=""> 경제M판 <button><img src="" alt="">펼치기</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- 공지사항 -->
+			<div>
+
+			</div>
 		</section>
 
 		<footer>
@@ -54,11 +233,18 @@
 				<a>로그인</a> 
 				<a>전체서비스</a>
 				<a>PC버전</a>
-				<br>
+			</div>	
+			<div>
 				<a>이용약관</a>
 				<a>개인정보처리방침</a>
 				<a>고객센터</a>
 			</div>
+			<div>
+				<a>
+					<img src="" alt="">네이버
+				</a>
+			</div>
 		</footer>
+	</div>
 	</body>
 </html>
