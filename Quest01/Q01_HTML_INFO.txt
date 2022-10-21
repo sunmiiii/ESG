@@ -159,18 +159,3 @@ keywords - 페이지의 콘텐츠와 관련된, 쉼표로 구분한 키워드 �
 기기 별 뷰포트가 다르기때문에 발생하는 배율 문제에 대응하기위해 meta태그를 통해 뷰포트 관련 설정 추가할 수 있음!
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	뷰포트의 너비를 단말기 너비에 맞추고, 초기 배율을 1로 한다!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
