@@ -12,13 +12,11 @@
 		<title>Document</title>
 	</head>
 	<body>
-	<!-- 바디 전체를 감싸는 div-->
-	<div>
 		<header>
 			<!-- TODO: 어디까지를 header로 보는 것이 좋을까요? -->
 			<!-- 맨 위 아이콘 영역-->
 			<div>
-				<a href="#"> <img src="" alt=""> 카테고리 </a>
+				<a href="#"> <img src="catergory.png" alt="catergory" width="44px" height="44px"></a>
 				<div>
 					<a href="#"> <img src="" alt=""> QR체크인 </a>
 				</div>
@@ -29,22 +27,30 @@
 					<a href="#"> <img src="" alt=""> 메일 </a>
 				</div>
 			</div>
-
 			<!-- 로고 및 검색창-->
 			<div>
 				<a href="#">
-					<img src="" alt=""> 네이버로고
+					<img src="naver_logo.png" alt="naver_logo">
 				</a>
 			</div>
 
 			<div>
 				<div>
-					<form action="#">
-					<input type="text" placeholder="검색어를 입력해주세요." name="name">
-					</form>
-					<button>마이크</button>
-					<button>카메라</button>
-					<button>지도</button>
+					<section>
+						<div>
+							<form action="#">
+								<div>
+									<input type="text" placeholder="검색어를 입력해주세요." name="name">
+								</div>
+								<button type="submit"></button>
+								<div>
+									<button>마이크</button>
+									<button>카메라</button>
+									<button>지도</button>
+								</div>
+							</form>
+						</div>
+					</section>
 				</div>
 			</div>
 
@@ -125,9 +131,15 @@
 			<!-- 오늘 날씨!-->
 			<div>
 				<div>
-					<img src="https://ssl.pstatic.net/sstatic/keypage/outside/scui/weather_new_new/img/weather_svg_v2/icon_flat_wt2.svg" width="50px" height="50px" alt="">
-					<strong> 10º 맑음</strong>
-					<p>어제보다 2º높아요</p>
+					<a href="#">
+						<div>
+							<img src="https://ssl.pstatic.net/sstatic/keypage/outside/scui/weather_new_new/img/weather_svg_v2/icon_flat_wt2.svg" width="50px" height="50px" alt="">
+						</div>
+						<div>
+							<strong> 10º 맑음</strong>
+							<p>어제보다 2º높아요</p>
+						</div>
+					</a>
 				</div>
 				<div>
 
@@ -182,12 +194,12 @@
 
 			<!-- 이미지 한줄-->
 			<div>
-				<img src="" alt=""> 제102주년 대한민국 임시정부 수립일
+				<img src="102.png" alt="">
 			</div>
 
 			<!-- 앱 전환-->
 			<div>
-				<a>
+				<a href="#">
 					<img src="" alt=""> <p>앱으로 <strong>새로운 네이버</strong>를 더 쾌적하게 사용해 보세요.</p>
 					<button>앱 사용하기</button>
 				</a>
@@ -247,6 +259,5 @@
 				</a>
 			</div>
 		</footer>
-	</div>
 	</body>
 </html>
