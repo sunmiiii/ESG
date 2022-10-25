@@ -49,7 +49,7 @@
 
  
 ### git의 Object, Commit, Head, Branch, Tag는 어떤 개념일까? git 시스템은 프로젝트의 히스토리를 어떻게 저장할까?
- - Object는 파일들을 관리하는 최상위 파일  
+ - Object는 디렉토리에 저장하고 그 데이터 접근할 수 있는 key를 알려줌
  - Commit git저장소에 디렉토리에 있는 모든 파일에 대한 스냅샷을 기록하는 것
  - Head 체크아웃된 커밋(현재 작업중인), 항상 작업트리의 가장 최근 커밋을 가르킴
  - Branch 특정 커밋에 대한 참조(reference)
