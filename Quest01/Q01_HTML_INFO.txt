@@ -171,3 +171,7 @@ keyboard shortcuts - ctrl k s
 
 
 
+※ 만약 디자인없이 문서형태로 확인하고 싶을때는 콘솔창을 다 지우고 밑에 명령어를 입력! ※
+Console부분에 Ctrl + L(Clear console)부분을 누른 후
+document.head.parentNode.removeChild(document.head);
+그러면 디자인부분을 제외한 문서가 보여짐! 형태를 확인해볼때 괜찮을듯
