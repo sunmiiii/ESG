@@ -10,17 +10,17 @@
 		<!-- 페이지 설명-->
 		<meta name="description" content="네이버모바일">
 		<title>Document</title>
-		<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+		<link rel="stylesheet" href="index_css.css" type="text/css">
 	</head>
 	<body>
 		<header>
 			<!-- TODO: 어디까지를 header로 보는 것이 좋을까요? -->
 			<!-- 맨 위 아이콘 영역-->
 			<div>
-				<a href="#"> <img src="./images/catergory.png" alt="catergory" width="33px" height="33px"></a>
+				<a href="#"> <img src="./images/catergory.png" alt="catergory"></a>
 				<div>
 					<div>
-						<a href="#"> <img src="./images/qr.png" alt="naver_qr" width="63px" height="53px"></a>
+						<a href="#"> <img src="./images/qr.png" alt="naver_qr"></a>
 					</div>
 					<div>
 						<a href="#"> <img src="./images/pay.png" alt="naver_pay"></a>
@@ -30,6 +30,11 @@
 					</div>
 				</div>
 			</div>
+
+		</header>
+
+		<section class="main">
+			<!-- TODO: main은 어떤 식으로 나눌 수 있을까요? -->
 			<!-- 로고 및 검색창-->
 			<div>
 				<a href="#">
@@ -56,14 +61,13 @@
 					</section>
 				</div>
 			</div>
-
 			<!-- 검색창 밑 아이콘들-->
 			<div>
 				<ul>
 					<li>
 						<a href="#">
 							<div>
-								<img src="./images/news.png" width="50px" height="50px" alt="news">
+								<img src="./images/news.png" alt="news">
 							</div>
 							<p>뉴스판</p>
 						</a>
@@ -71,7 +75,7 @@
 					<li>
 						<a href="#">
 							<div>
-								<img src="./images/economy.png" width="50px" height="50px"alt="economy">
+								<img src="./images/economy.png" alt="economy">
 							</div>
 							<p>경제지표판</p>
 						</a>
@@ -79,7 +83,7 @@
 					<li>
 						<a href="#">
 							<div>
-								<img src="https://s.pstatic.net/static/www/mobile/edit/20220303_0/upload_1646297330983vHTOQ.png" width="50px" height="50px" alt="">
+								<img src="https://s.pstatic.net/static/www/mobile/edit/20220303_0/upload_1646297330983vHTOQ.png" alt="">
 							</div>
 							<p>연예판</p>
 						</a>
@@ -87,7 +91,7 @@
 					<li>
 						<a href="#">
 							<div>
-								<img src="https://s.pstatic.net/static/www/mobile/edit/20220303_0/upload_1646297330983vHTOQ.png" width="50px" height="50px" alt="">
+								<img src="https://s.pstatic.net/static/www/mobile/edit/20220303_0/upload_1646297330983vHTOQ.png" alt="">
 							</div>
 							<p>트렌드판</p>
 						</a>
@@ -95,7 +99,7 @@
 					<li>
 						<a href="#">
 							<div>
-								<img src="./images/mail.png" width="50px" height="50px" alt="mail">
+								<img src="./images/mail.png" alt="mail">
 							</div>
 							<p>메일</p>
 						</a>
@@ -103,7 +107,7 @@
 					<li>
 						<a href="#">
 							<div>
-								<img src="./images/cafe.png" width="50px" height="50px" alt="cafe">
+								<img src="./images/cafe.png" alt="cafe">
 							</div>
 							<p>카페</p>
 						</a>
@@ -111,7 +115,7 @@
 					<li>
 						<a href="#">
 							<div>
-								<img src="./images/blog.png" width="50px" height="50px" alt="blog">
+								<img src="./images/blog.png" alt="blog">
 							</div>
 							<p>블로그</p>
 						</a>
@@ -119,33 +123,24 @@
 					<li>
 						<a href="#">
 							<div>
-								<img src="./images/etc.png" width="50px" height="50px" alt="">
+								<img src="./images/etc.png" alt="">
 							</div>
 						</a>
 					</li>
 				</ul>
 			</div>
-			
-		</header>
-
-
-		<section class="main">
-			<!-- TODO: main은 어떤 식으로 나눌 수 있을까요? -->
 			<!-- 오늘 날씨!-->
 			<div>
 				<div>
 					<a href="#">
 						<div>
-							<img src="./images/wt1.png" width="50px" height="50px" alt="weather">
+							<img src="./images/wt1.png" alt="weather">
 						</div>
 						<div>
 							<strong> 10º 맑음</strong>
 							<p>어제보다 2º높아요</p>
 						</div>
 					</a>
-				</div>
-				<div>
-
 				</div>
 			</div>
 			<!-- 이번주 날씨 -->
@@ -223,16 +218,16 @@
 				<div>
 					<a href="#">
 						<img src="./images/virus.png" alt="status"><strong>코로나19</strong>
-					</div>
 						<p>국내외 확진 현황</p>
 					</a>
+				</div>
 
 				<div>
 					<a href="#">
 						<img src="./images/ox.png" alt="fact_checking"><strong>코로나19 팩트체크</strong>
-					</div>
 						<p>백신 정보 팩트는?</p>
 					</a>
+				</div>
 			</div>
 
 			<!-- 이미지 한줄-->

@@ -1,0 +1,16 @@
+css(cascading style sheets)란?
+HTML이나 XML로 작성된 문서의 표시 방법을 기술하기 위한 스타일 시트 언어이다. 
+(HTML은 마크업 언어, CSS는 Style sheet언어!)
+
+css는 박스의 크기, 위치, 속성등을 결정함
+
+콘텐츠 영역(Content area) - 콘텐츠 경계를 감싼 영역, 글, 이미지 등 실제 내용 포함
+box-sizing 속성의 값이 기본값인 content-box이며 요소가 블록 레벨 요소인 경우, 콘텐츠 영역의 크기를 width, min-width, max-width, height, min-height, max-height 속성을 사용해 사용해 명시적으로 설정가능
+
+안쪽 여백 영역(Padding area) - 안쪽 여백 경계를 감싼 영역, 콘텐츠 영역 요소의 안쪽 여백까지 포함
+안쪽 여백의 두께는 padding-top, padding-right, padding-bottom, padding-left와 단축 속성인 padding이 결정
+
+테두리 영역(Border area) - 테두리 경계를 감싼 영역, 안쪽 여백 영역을 요소의 테두리까지 포함
+테두리 두께는 border
+
+
