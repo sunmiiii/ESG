@@ -1,0 +1,59 @@
+/* 다른 브라우저간의 시각적 차이 방지 */
+body{
+  margin: 0;
+  padding: 0;
+}
+.container{
+  display: flex;
+  justify-self: flex-start;
+  margin-top: 10px;
+}
+.left_icon{
+  margin-right: auto;
+}
+.right_icon{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  
+}
+.bgColor{
+  margin-left: 10px;
+  background-color: #eee;
+}
+.pay{
+  border-radius: 25%;
+}
+.mail{
+  border-radius: 50%;
+}
+.nLogo{
+  padding-top: 5%;
+}
+#center{
+  width:100%;max-width:800px;margin:0 auto;background:red;
+}
+.nLogo{
+  text-align:center;
+}
+.search{
+  text-align:center;
+}
+.ull{
+  width:88%;overflow:hidden;background:#eee;margin:0 auto;
+}
+.ull .lis{
+  width:25%;float:left;
+}
+.con{
+  background:#fff; margin:0 auto; width:95%;
+  display: flex;
+}
+footer{
+  text-align:center;
+}
+
+
+
+
+

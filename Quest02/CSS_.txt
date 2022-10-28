@@ -13,4 +13,22 @@ box-sizing 속성의 값이 기본값인 content-box이며 요소가 블록 레�
 테두리 영역(Border area) - 테두리 경계를 감싼 영역, 안쪽 여백 영역을 요소의 테두리까지 포함
 테두리 두께는 border
 
+a[href] {
+	color : red;
+}
+==> a태그의 href속성이 적용된 애들만 적용
+
+div.container>div.item.item${$}*3(반복횟수)
+
+<div class="container">
+  <div class="item item1">1</div>
+  <div class="item item2">2</div>
+  <div class="item item3">3</div>
+
+
+
+
+
+
+
 

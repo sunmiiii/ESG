@@ -9,296 +9,295 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- 페이지 설명-->
 		<meta name="description" content="네이버모바일">
-		<title>Document</title>
+		<title>NaverPage</title>
 		<link rel="stylesheet" href="index_css.css" type="text/css">
 	</head>
 	<body>
 		<header>
-			<!-- TODO: 어디까지를 header로 보는 것이 좋을까요? -->
 			<!-- 맨 위 아이콘 영역-->
-			<div>
-				<a href="#"> <img src="./images/catergory.png" alt="catergory"></a>
-				<div>
+			<div class="container">
+				<div class="left_icon">
+					<a href="#"> <img src="./images/catergory.png" alt="catergory" width="60px" height="40px"></a>
+				</div>
+				<div class="right_icon">
 					<div>
-						<a href="#"> <img src="./images/qr.png" alt="naver_qr"></a>
+						<a href="#"> <img src="./images/qr.png" alt="naver_qr" width="60px"
+							height="35px"></a>
 					</div>
-					<div>
+					<div class="bgColor pay">
 						<a href="#"> <img src="./images/pay.png" alt="naver_pay"></a>
 					</div>
-					<div>
+					<div class="bgColor mail">
 						<a href="#"> <img src="./images/mail2.png" alt="naver_mail"></a>
 					</div>
 				</div>
 			</div>
-
 		</header>
-
-		<section class="main">
-			<!-- TODO: main은 어떤 식으로 나눌 수 있을까요? -->
-			<!-- 로고 및 검색창-->
-			<div>
-				<a href="#">
-					<img src="./images/naver-logo.png" alt="naver_logo">
-				</a>
-			</div>
-
-			<div>
+		<div id="center">
+			<section class="main">
+				<!-- 로고-->
+				<div class="nLogo">
+					<a href="#">
+						<img src="./images/naver-logo.png" alt="naver_logo">
+					</a>
+				</div>
+				<!-- 검색창-->
 				<div>
-					<section>
+					<div class="search">
 						<div>
 							<form action="#">
 								<div>
 									<input type="text" placeholder="검색어를 입력해주세요." name="name">
 								</div>
 								<button type="submit"></button>
-								<div>
+								<div class="sch_icon">
 									<button><img src="./images/mic.png" alt="mike"></button>
 									<button><img src="./images/photo.png" alt="photo"></button>
 									<button><img src="./images/map.png" alt="map"></button>
 								</div>
 							</form>
 						</div>
-					</section>
-				</div>
-			</div>
-			<!-- 검색창 밑 아이콘들-->
-			<div>
-				<ul>
-					<li>
-						<a href="#">
-							<div>
-								<img src="./images/news.png" alt="news">
-							</div>
-							<p>뉴스판</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div>
-								<img src="./images/economy.png" alt="economy">
-							</div>
-							<p>경제지표판</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div>
-								<img src="https://s.pstatic.net/static/www/mobile/edit/20220303_0/upload_1646297330983vHTOQ.png" alt="">
-							</div>
-							<p>연예판</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div>
-								<img src="https://s.pstatic.net/static/www/mobile/edit/20220303_0/upload_1646297330983vHTOQ.png" alt="">
-							</div>
-							<p>트렌드판</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div>
-								<img src="./images/mail.png" alt="mail">
-							</div>
-							<p>메일</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div>
-								<img src="./images/cafe.png" alt="cafe">
-							</div>
-							<p>카페</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div>
-								<img src="./images/blog.png" alt="blog">
-							</div>
-							<p>블로그</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div>
-								<img src="./images/etc.png" alt="">
-							</div>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<!-- 오늘 날씨!-->
-			<div>
-				<div>
-					<a href="#">
-						<div>
-							<img src="./images/wt1.png" alt="weather">
-						</div>
-						<div>
-							<strong> 10º 맑음</strong>
-							<p>어제보다 2º높아요</p>
-						</div>
-					</a>
-				</div>
-			</div>
-			<!-- 이번주 날씨 -->
-			<div>
-				<a href="#">
-					<div>
-						<strong>날씨</strong>
-						<p>서울시 잠실동 <img src="./images/target.png" alt="target"> </p>
 					</div>
-				</a>
+				</div>
+				<!-- 검색창 밑 아이콘들-->
 				<div>
-					<ul>
-						<li><a href="#">시간대별 날씨</a></li>
-						<li><a href="#">시간대별 미세먼지</a></li>
-						<li><a href="#">주간 날씨</a></li>
-						<li><a href="#">주간 미세먼지</a></li>
+					<ul class="ull">
+						<li class="lis">
+							<a href="#">
+								<div>
+									<img src="./images/news.png" alt="news">
+								</div>
+								<p>뉴스판</p>
+							</a>
+						</li>
+						<li class="lis">
+							<a href="#">
+								<div>
+									<img src="./images/economy.png" alt="economy">
+								</div>
+								<p>경제지표판</p>
+							</a>
+						</li>
+						<li class="lis">
+							<a href="#">
+								<div>
+									<img src="https://s.pstatic.net/static/www/mobile/edit/20220303_0/upload_1646297330983vHTOQ.png" alt="">
+								</div>
+								<p>연예판</p>
+							</a>
+						</li>
+						<li class="lis">
+							<a href="#">
+								<div>
+									<img src="https://s.pstatic.net/static/www/mobile/edit/20220303_0/upload_1646297330983vHTOQ.png" alt="">
+								</div>
+								<p>트렌드판</p>
+							</a>
+						</li>
+						<li class="lis">
+							<a href="#">
+								<div>
+									<img src="./images/mail.png" alt="mail">
+								</div>
+								<p>메일</p>
+							</a>
+						</li>
+						<li class="lis">
+							<a href="#">
+								<div>
+									<img src="./images/cafe.png" alt="cafe">
+								</div>
+								<p>카페</p>
+							</a>
+						</li>
+						<li class="lis">
+							<a href="#">
+								<div>
+									<img src="./images/blog.png" alt="blog">
+								</div>
+								<p>블로그</p>
+							</a>
+						</li>
+						<li class="lis">
+							<a href="#">
+								<div>
+									<img src="./images/etc.png" alt="">
+								</div>
+							</a>
+						</li>
 					</ul>
 				</div>
-				<!-- 요일별 날씨를 감싸는 div-->
-				<div> 
+				<!-- 오늘 날씨!-->
+				<div class="con">
+					<div>
+						<a href="#">
+							<div>
+								<img src="./images/wt1.png" alt="weather">
+							</div>
+							<div>
+								<strong> 10º 맑음</strong>
+								<p>어제보다 2º높아요</p>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- 이번주 날씨 -->
+				<div class="con">
 					<a href="#">
+						<div>
+							<strong>날씨</strong>
+							<p>서울시 잠실동 <img src="./images/target.png" alt="target"> </p>
+						</div>
+					</a>
+					<div>
 						<ul>
-							<li>
-								<div>어제</div>
-								<div><span>8º</span></div>
-								<div><span>19º</span></div>
-							</li>
-							<li>
-								<div>오늘</div>
-								<div><span>7º</span></div>
-								<div><span>22º</span></div>
-							</li>
-							<li>
-								<div>월</div>
-								<div><span>11º</span></div>
-								<div><span>17º</span></div>
-							</li>
-							<li>
-								<div>화</div>
-								<div><span>12º</span></div>
-								<div><span>18º</span></div>
-							</li>
-							<li>
-								<div>수</div>
-								<div><span>4º</span></div>
-								<div><span>17º</span></div>
-							</li>
-							<li>
-								<div>목</div>
-								<div><span>4º</span></div>
-								<div><span>19º</span></div>
-							</li>
-							<li>
-								<div>금</div>
-								<div><span>6º</span></div>
-								<div><span>19º</span></div>
-							</li>
-							<li>
-								<div>토</div>
-								<div><span>8º</span></div>
-								<div><span>19º</span></div>
-							</li>
-							<li>
-								<div>일</div>
-								<div><span>6º</span></div>
-								<div><span>18º</span></div>
-							</li>
+							<li><a href="#">시간대별 날씨</a></li>
+							<li><a href="#">시간대별 미세먼지</a></li>
+							<li><a href="#">주간 날씨</a></li>
+							<li><a href="#">주간 미세먼지</a></li>
 						</ul>
-					</a>  
+					</div>
+					<!-- 요일별 날씨를 감싸는 div-->
+					<div class="con"> 
+						<a href="#">
+							<ul>
+								<li>
+									<div>어제</div>
+									<div><span>8º</span></div>
+									<div><span>19º</span></div>
+								</li>
+								<li>
+									<div>오늘</div>
+									<div><span>7º</span></div>
+									<div><span>22º</span></div>
+								</li>
+								<li>
+									<div>월</div>
+									<div><span>11º</span></div>
+									<div><span>17º</span></div>
+								</li>
+								<li>
+									<div>화</div>
+									<div><span>12º</span></div>
+									<div><span>18º</span></div>
+								</li>
+								<li>
+									<div>수</div>
+									<div><span>4º</span></div>
+									<div><span>17º</span></div>
+								</li>
+								<li>
+									<div>목</div>
+									<div><span>4º</span></div>
+									<div><span>19º</span></div>
+								</li>
+								<li>
+									<div>금</div>
+									<div><span>6º</span></div>
+									<div><span>19º</span></div>
+								</li>
+								<li>
+									<div>토</div>
+									<div><span>8º</span></div>
+									<div><span>19º</span></div>
+								</li>
+								<li>
+									<div>일</div>
+									<div><span>6º</span></div>
+									<div><span>18º</span></div>
+								</li>
+							</ul>
+						</a>  
+					</div>
 				</div>
-			</div>
 
-			<!-- 코로나현황-->
-			<div>
-				<div>
+				<!-- 코로나현황-->
+				<div class="con">
+					<div>
+						<a href="#">
+							<img src="./images/virus.png" alt="status"><strong>코로나19</strong>
+							<p>국내외 확진 현황</p>
+						</a>
+					</div>
+
+					<div>
+						<a href="#">
+							<img src="./images/ox.png" alt="fact_checking"><strong>코로나19 팩트체크</strong>
+							<p>백신 정보 팩트는?</p>
+						</a>
+					</div>
+				</div>
+
+				<!-- 이미지 한줄-->
+				<div class="con">
+					<img src="./images/102.png" alt="korea_102">
+				</div>
+
+				<!-- 앱 전환-->
+				<div class="con">
 					<a href="#">
-						<img src="./images/virus.png" alt="status"><strong>코로나19</strong>
-						<p>국내외 확진 현황</p>
+						<img src="./images/naver-icon.png" alt="naver_logo"> <p>앱으로 <strong>새로운 네이버</strong>를 더 쾌적하게 사용해 보세요.</p>
+						<p>앱 사용하기</p>
 					</a>
 				</div>
 
-				<div>
+				<!-- 웹툰 -->
+				<div class="con">
+					<div>
+						<strong>웹툰</strong>
+					</div>
+					<div>
+						<button><img src="./images/down-icon.png" alt="">펼치기</button>
+					</div>
+				</div>
+
+				<!-- 인기 주제 판! -->
+				<div class="con">
+					<div>
+						<div>
+							<strong>인기 주제 판을 확인해 보세요!</strong>
+						</div>
+						<div>
+							<p>판관리</p>
+						</div>
+					</div>
+					<div>
+						<ul>
+							<li><a href="#"><img src="./images/pan1.png" alt="">영화판<img src="./images/go-icon.png" alt=""></a></li>
+							<li><a href="#"><img src="./images/pan2.png" alt="">뿜판<img src="./images/go-icon.png" alt=""></a></li>
+							<li><a href="#"><img src="./images/pan3.png" alt="">웹툰판<img src="./images/go-icon.png" alt=""></a></li>
+							<li><a href="#"><img src="./images/pan4.png" alt="">경제M판<img src="./images/go-icon.png" alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- 공지사항 -->
+				<div class="con">
 					<a href="#">
-						<img src="./images/ox.png" alt="fact_checking"><strong>코로나19 팩트체크</strong>
-						<p>백신 정보 팩트는?</p>
+						<span>네이버앱 업데이트 사전 안내</span>
+						<img src="./images/go-icon.png" alt="">
 					</a>
 				</div>
-			</div>
+			</section>
 
-			<!-- 이미지 한줄-->
-			<div>
-				<img src="./images/102.png" alt="korea_102">
-			</div>
-
-			<!-- 앱 전환-->
-			<div>
-				<a href="#">
-					<img src="./images/naver-icon.png" alt="naver_logo"> <p>앱으로 <strong>새로운 네이버</strong>를 더 쾌적하게 사용해 보세요.</p>
-					<p>앱 사용하기</p>
-				</a>
-			</div>
-
-			<!-- 웹툰 -->
-			<div>
+			<footer>
+				<!-- TODO: 하단의 여러 가지 링크들은 어떻게 처리하면 좋을까요? -->
 				<div>
-					<strong>웹툰</strong>
+					<a href="#">로그인</a> 
+					<a href="#">전체서비스</a>
+					<a href="#">PC버전</a>
+				</div>	
+				<div>
+					<a href="#">이용약관</a>
+					<a href="#"><strong>개인정보처리방침</strong></a>
+					<a href="#">고객센터</a>
 				</div>
 				<div>
-					<button><img src="./images/down-icon.png" alt="">펼치기</button>
+					<a href="#">
+						<img src="./images/f-logo.png" alt="naver_logo">
+					</a>
 				</div>
-			</div>
-
-			<!-- 인기 주제 판! -->
-			<div>
-				<div>
-					<div>
-						<strong>인기 주제 판을 확인해 보세요!</strong>
-					</div>
-					<div>
-						<p>판관리</p>
-					</div>
-				</div>
-				<div>
-					<ul>
-						<li><a href="#"><img src="./images/pan1.png" alt="">영화판<img src="./images/go-icon.png" alt=""></a></li>
-						<li><a href="#"><img src="./images/pan2.png" alt="">뿜판<img src="./images/go-icon.png" alt=""></a></li>
-						<li><a href="#"><img src="./images/pan3.png" alt="">웹툰판<img src="./images/go-icon.png" alt=""></a></li>
-						<li><a href="#"><img src="./images/pan4.png" alt="">경제M판<img src="./images/go-icon.png" alt=""></a></li>
-					</ul>
-				</div>
-			</div>
-
-			<!-- 공지사항 -->
-			<div>
-				<a href="#">
-					<span>네이버앱 업데이트 사전 안내</span>
-					<img src="./images/go-icon.png" alt="">
-				</a>
-			</div>
-		</section>
-
-		<footer>
-			<!-- TODO: 하단의 여러 가지 링크들은 어떻게 처리하면 좋을까요? -->
-			<div>
-				<a href="#">로그인</a> 
-				<a href="#">전체서비스</a>
-				<a href="#">PC버전</a>
-			</div>	
-			<div>
-				<a href="#">이용약관</a>
-				<a href="#"><strong>개인정보처리방침</strong></a>
-				<a href="#">고객센터</a>
-			</div>
-			<div>
-				<a href="#">
-					<img src="./images/f-logo.png" alt="naver_logo">
-				</a>
-			</div>
-		</footer>
+			</footer>
+		</div>
 	</body>
 </html>
