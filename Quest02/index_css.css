@@ -78,6 +78,9 @@ input{
 .app{
   justify-items: flex-start;
 }
+.webtoon, .alarm{
+  height: 65px;
+}
 footer{
   margin-top: 5%;
   text-align:center;
