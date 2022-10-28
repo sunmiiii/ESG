@@ -2,6 +2,16 @@
 body{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+/* 동그라미 지우기 */
+ul, ol{
+  list-style: none;
+  padding-inline-start: 0;
+}
+/* 밑줄삭제, 일반글씨처럼 보임 */
+a{
+  text-decoration: none;
 }
 .container{
   display: flex;
@@ -15,7 +25,6 @@ body{
   display: flex;
   justify-items: center;
   align-items: center;
-  
 }
 .bgColor{
   margin-left: 10px;
@@ -31,7 +40,7 @@ body{
   padding-top: 5%;
 }
 #center{
-  width:100%;max-width:800px;margin:0 auto;background:red;
+  width:100%;max-width:800px;margin:0 auto;background:gainsboro;
 }
 .nLogo{
   text-align:center;
@@ -39,17 +48,38 @@ body{
 .search{
   text-align:center;
 }
+input{
+  width: 600px;
+  height: 50px;
+}
 .ull{
-  width:88%;overflow:hidden;background:#eee;margin:0 auto;
+  width:88%;display: flex;flex-wrap: wrap;margin:0 auto;
 }
 .ull .lis{
-  width:25%;float:left;
+  width:25%;
 }
-.con{
+.lis p, .imgCon{
+  text-align: center;
+}
+.imgCon img{
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25%;
+}
+.todayWt, .weekWt, .corona, .korea_102, .app, .webtoon, .pan, .alarm{
   background:#fff; margin:0 auto; width:95%;
   display: flex;
+  margin-top: 10px;
+}
+.kocrn{
+  width: 50%;
+}
+.app{
+  justify-items: flex-start;
 }
 footer{
+  margin-top: 5%;
   text-align:center;
 }
 
