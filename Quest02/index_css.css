@@ -14,7 +14,7 @@ ul, ol{
 a{
   text-decoration: none;
 }
-/* 차이 방지 */
+/* 기초설정 */
 p{
   margin:0;
 }
@@ -30,29 +30,29 @@ button{
   justify-self: flex-start;
   margin-top: 10px;
 }
-/* 헤더 왼쪽아이콘 */
+/* 헤더 왼쪽이미지 */
 .left_icon{
   margin-right: auto;
 }
-/* 헤더 오른쪽아이콘 */
+/* 헤더 오른쪽이미지 */
 .right_icon{
   display: flex;
   justify-items: center;
   align-items: center;
 }
-/* 헤더 오른쪽아이콘 간격 및 배경색 */
+/* 헤더 오른쪽이미지 간격 및 배경색 */
 .bgColor{
   margin-left: 10px;
   background-color: #eee;
 }
-/* 헤더 오른쪽아이콘 페이 */
+/* 헤더 오른쪽이미지 페이 */
 .pay{
   text-align: center;
   height: 30px;
   width: 60px;
   border-radius: 30%;
 }
-/* 헤더 오른쪽아이콘 메일 */
+/* 헤더 오른쪽이미지 메일 */
 .mail{
   text-align: center;
   height: 30px;
@@ -62,23 +62,40 @@ button{
 /* 검색창 위 로고 */
 .nLogo{
   padding-top: 5%;
+  padding-bottom: 20px;
   text-align:center;
+}
+/* 앱 사용하기 버튼 */
+.appBtn{
+  border: 1px solid #2586ee;padding: 9px 10px;font-size: 13px;font-weight: bold;
+  color: #2586ee;border-radius: 3px;margin-right:6px;letter-spacing:-0.08em;
 }
 /* 검색창 */
 .inputF{
   position: relative;
 }
-/* 아이콘들 */
+/* 검색창모양 */
+.inputT{
+  border: 1px solid #03c75a;font-size: 15px;font-weight: bold;
+  color: #03c75a;border-radius: 4px;margin-right:6px;letter-spacing:-0.08em;
+}
+/* 인풋 참고말 색변경 */
+input::placeholder{
+  color:#ccc;padding-left: 15px;}
+/* 이미지들 */
 .sch_icon{
   position: absolute;
   right:118px;
   top: 50%;
   transform: translateY(-50%);
 }
+.sch_icons{
+  padding-right: 10px;
+}
 .blind{display:none;}
-/* 임시? */
+/* main~사이즈 조절 */
 #center{
-  width:100%;max-width:800px;margin:0 auto;background:gainsboro;
+  width:100%;max-width:800px;margin:0 auto;background:rgb(230, 229, 229);
 }
 /* 검색창 가운데 정렬 */
 .search{
@@ -91,17 +108,23 @@ input{
 }
 /* 검색창 밑 목록들 */
 .ull{
-  width:88%;display: flex;flex-wrap: wrap;margin:0 auto;
+  width:75%;display: flex;flex-wrap: wrap;margin:0 auto;
+  padding-top: 20px;
+  padding-bottom: 15%;
 }
 /* 목록들 간격 */
 .ull .lis{
   width:25%;
 }
-/* 목록 아이콘, 글씨 가운데 정렬 */
+/* 목록 글씨 */
+.panP{
+  font-size: 14px; color:rgb(162, 162, 162);
+}
+/* 목록 이미지, 글씨 가운데 정렬 */
 .lis p, .imgCon{
   text-align: center;
 }
-/* 목록 아이콘 모양 조절 */
+/* 목록 이미지 모양 조절 */
 .imgCon img{
   margin-top: 10px;
   width: 50px;
@@ -113,6 +136,22 @@ input{
   display: flex;
   align-items: center;
 }
+/* 날씨 글씨 간격 */
+.weat2{
+  padding-left: 10px;
+}
+.toInfo{
+  font-size: 20px;
+}
+.toInfo~p{
+  font-size: 14px;
+  padding-top: 5px;
+}
+.nowImg{
+  width: 70px;
+  height: 50px;
+}
+/* 공통적인 부분들 */
 .con{
   background:#fff; margin:0 auto; width:95%;
   /* display: flex; */
@@ -121,7 +160,7 @@ input{
   border-radius: 10px 10px 0 0 ;
   margin-top: 10px;
 }
-/*  */
+/* 오늘 날씨 양 옆으로 나누기(패딩없애기 위해 con밑에 작성 */
 .todayWt{
   display: flex;
   justify-content: space-between;
@@ -132,6 +171,13 @@ input{
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+}
+.weD strong{
+  padding-right: 20px;
+}
+.weD img{
+  width: 20px;
+  height: 20px;
 }
 /* 이번주날씨, 요일별 날씨 */
 .wtList, .weList{
@@ -147,11 +193,12 @@ input{
   display: inline-table;
   line-height: 30px;
 }
-/*  */
+/* 날씨 ul */
 .weLi a{
   background-color: #eee;
   padding: 8px 10px;
   margin-right: 5px;
+  border-radius: 3px;
 }
 /* 요일별 날씨 나열 */
 .wtList .wtLi{
@@ -165,8 +212,20 @@ input{
 .kocrn{
   width: 50%;
 }
+.korea_102{
+  padding: 0;
+}
+/* 102주년 이미지 가운데 맞춤 */
 .i_102{
+  height: 60px;
+  align-items: center;
   text-align: center;
+  box-sizing: border-box;
+}
+.i_102 img{
+  padding-top: 10px;
+  width: 350px;
+  height: 40px;
 }
 /* 앱 사용하기 시작점 */
 .appA{
@@ -174,9 +233,18 @@ input{
   justify-content: space-between;
   align-items: center;
 }
+/* 앱 전환 가운데 맞춤 */
 .appAD{
   display: flex;
   align-items: center;
+}
+.appAD p{
+  padding-left: 10px;
+}
+/* 앱 사용하기 버튼 */
+.appBtn{
+  border: 1px solid #2586ee;padding: 9px 10px;font-size: 13px;font-weight: bold;
+  color: #2586ee;border-radius: 3px;margin-right:6px;letter-spacing:-0.08em;
 }
 /* 웹툰 전체,공지사항 가운데 정렬 */
 .webtoon, .alarm{
@@ -187,7 +255,7 @@ input{
 div.webStr{
   float: left; width: 95%; 
 }
-/* 웹툰 아이콘 오른쪽 정렬 */
+/* 웹툰 이미지 오른쪽 정렬 */
 div.webImg{
   float: right; 
 }
@@ -201,16 +269,22 @@ div.webImg{
   justify-content: space-between;
   padding-bottom: 20px;
 }
+.panD{
+  padding-right: 10px; color: rgb(133, 133, 133);
+}
+/* 판 Ul 두칸으로 나누기*/
 .panUl{
   display: flex;
   flex-wrap: wrap;
 }
+/* 판 Li 사이즈 조절*/
 .panLi{
   width: 50%;
   padding-right: 2px;
   padding-bottom: 6px;
   box-sizing: border-box;
 }
+/* 판 a 사이즈조절 및 색 */
 .panLi a{
   background-color: #eee;
   padding: 10px 10px;
@@ -235,6 +309,23 @@ div.webImg{
 footer{
   margin-top: 5%;
   text-align:center;
+}
+.foot1{
+  padding-bottom: 7px;
+}
+.foot1 a{
+  padding-right: 3px;
+}
+.foot2{
+  padding-bottom: 20px;
+}
+.foot2 a{
+  padding-right: 3px;
+}
+.foot3 img{
+  width: 100px;
+  height: 25px;
+  padding-bottom: 20%;
 }
 
 
