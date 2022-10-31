@@ -44,17 +44,19 @@ button{
 .bgColor{
   margin-left: 10px;
   background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(228, 225, 225);
 }
 /* 헤더 오른쪽이미지 페이 */
 .pay{
-  text-align: center;
   height: 30px;
   width: 60px;
-  border-radius: 30%;
+  border-radius: 30px;
 }
 /* 헤더 오른쪽이미지 메일 */
 .mail{
-  text-align: center;
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -173,7 +175,8 @@ input{
   margin-bottom: 15px;
 }
 .weD strong{
-  padding-right: 20px;
+  padding-right: 15px;
+  font-size: 20px;
 }
 .weD img{
   width: 20px;
