@@ -42,14 +42,13 @@
 					</a>
 				</div>
 				<!-- 검색창-->
-				<div>
 					<div class="search">
 						<div class="parSea">
-							<form action="#">
+							<form action="#" class="inputF">
 								<div>
 									<input type="text" placeholder="검색어를 입력해주세요." name="name">
 								</div>
-								<button type="submit"></button>
+								<button type="submit" class="blind"></button>
 								<div class="sch_icon">
 									<button><img src="./images/mic.png" alt="mike"></button>
 									<button><img src="./images/photo.png" alt="photo"></button>
@@ -58,7 +57,6 @@
 							</form>
 						</div>
 					</div>
-				</div>
 				<!-- 검색창 밑 아이콘들-->
 				<div>
 					<ul class="ull">
@@ -128,22 +126,18 @@
 					</ul>
 				</div>
 				<!-- 오늘 날씨!-->
-				<div class="todayWt">
-					<div>
-						<a href="#">
-							<div>
-								<div>
-									<img src="./images/wt1.png" alt="weather">
-								</div>
-								<div>
-									<strong> 10º 맑음</strong>
-									<p>어제보다 2º높아요</p>
-								</div>
+				<div class="todayWt con">
+					<a href="#" class="toA">
+							<div class="weat">
+								<img src="./images/wt1.png" alt="weather">
 							</div>
-						</a>
-					</div>
-					<div>
-						<!-- now 지금 방송중~-->
+							<div class="weat2">
+								<strong class="toInfo"> 10º 맑음</strong>
+								<p>어제보다 2º높아요</p>
+							</div>
+					</a>
+					<!-- now 지금 방송중~-->
+					<div>	
 						<div>
 							<a href="#">
 								<img src="./images/now.png" alt="">
@@ -161,83 +155,91 @@
 					</div>
 				</div>
 				<!-- 이번주 날씨 -->
-				<div class="weekWt">
+				<div class="weekWt con">
 					<a href="#">
-						<div>
+						<div  class="weD">
 							<strong>날씨</strong>
 							<p>서울시 잠실동 <img src="./images/target.png" alt="target"> </p>
 						</div>
 					</a>
 					<div>
-						<ul>
-							<li><a href="#">시간대별 날씨</a></li>
-							<li><a href="#">시간대별 미세먼지</a></li>
-							<li><a href="#">주간 날씨</a></li>
-							<li><a href="#">주간 미세먼지</a></li>
+						<ul class="weList">
+							<li class="weLi">
+								<a href="#">시간대별 날씨</a>
+							</li>
+							<li class="weLi">
+								<a href="#">시간대별 미세먼지</a>
+							</li>
+							<li class="weLi">
+								<a href="#">주간 날씨</a>
+							</li>
+							<li class="weLi">
+								<a href="#">주간 미세먼지</a>
+							</li>
 						</ul>
 					</div>
 					<!-- 요일별 날씨를 감싸는 div-->
 					<div class=""> 
 						<a href="#">
-							<ul>
-								<li>
+							<ul class="wtList">
+								<li class="wtLi">
+									<div>19º</div>
+									<div>8º</div>
 									<div>어제</div>
-									<div><span>8º</span></div>
-									<div><span>19º</span></div>
 								</li>
-								<li>
+								<li class="wtLi">
+									<div>22º</div>
+									<div>7º</div>
 									<div>오늘</div>
-									<div><span>7º</span></div>
-									<div><span>22º</span></div>
 								</li>
-								<li>
+								<li class="wtLi">
+									<div>17º</div>
+									<div>11º</div>
 									<div>월</div>
-									<div><span>11º</span></div>
-									<div><span>17º</span></div>
 								</li>
-								<li>
+								<li class="wtLi">
+									<div>18º</div>
+									<div>12º</div>
 									<div>화</div>
-									<div><span>12º</span></div>
-									<div><span>18º</span></div>
 								</li>
-								<li>
+								<li class="wtLi">
+									<div>17º</div>
+									<div>4º</div>
 									<div>수</div>
-									<div><span>4º</span></div>
-									<div><span>17º</span></div>
 								</li>
-								<li>
+								<li class="wtLi">
+									<div>19º</div>
+									<div>4º</div>
 									<div>목</div>
-									<div><span>4º</span></div>
-									<div><span>19º</span></div>
 								</li>
-								<li>
+								<li class="wtLi">
+									<div>19º</div>
+									<div>6º</div>
 									<div>금</div>
-									<div><span>6º</span></div>
-									<div><span>19º</span></div>
 								</li>
-								<li>
+								<li class="wtLi">
+									<div>19º</div>
+									<div>8º</div>
 									<div>토</div>
-									<div><span>8º</span></div>
-									<div><span>19º</span></div>
 								</li>
-								<li>
+								<li class="wttLi">
+									<div>18º</div>
+									<div>6º</div>
 									<div>일</div>
-									<div><span>6º</span></div>
-									<div><span>18º</span></div>
 								</li>
 							</ul>
 						</a>  
 					</div>
 				</div>
 				<!-- 코로나현황-->
-				<div class="corona">
+				<div class="corona con">
 					<div class="kocrn">
 						<a href="#">
 							<img src="./images/virus.png" alt="status"><strong>코로나19</strong>
 							<p>국내외 확진 현황</p>
 						</a>
 					</div>
-					<div>
+					<div class="kocrn">
 						<a href="#">
 							<img src="./images/ox.png" alt="fact_checking"><strong>코로나19 팩트체크</strong>
 							<p>백신 정보 팩트는?</p>
@@ -245,50 +247,76 @@
 					</div>
 				</div>
 				<!-- 이미지 한줄-->
-				<div class="korea_102">
-					<img src="./images/102.png" alt="korea_102">
+				<div class="korea_102 con">
+					<div>
+						<div class="i_102">
+							<img src="./images/102.png" alt="korea_102">
+						</div>
+					</div>
 				</div>
 				<!-- 앱 전환-->
-				<div class="app">
-					<a href="#">
-						<img src="./images/naver-icon.png" alt="naver_logo"> <p>앱으로 <strong>새로운 네이버</strong>를 더 쾌적하게 사용해 보세요.</p>
+				<div class="app con">
+					<a href="#" class="appA">
+						<div class="appAD">
+							<img src="./images/naver-icon.png" alt="naver_logo"> 
+							<p>앱으로 <strong>새로운 네이버</strong>를 더 쾌적하게 사용해 보세요.</p>
+						</div>
 						<p>앱 사용하기</p>
 					</a>
 				</div>
 				<!-- 웹툰 -->
-				<div class="webtoon">
-					<div>
+				<div class="webtoon con">
+					<div class="webStr">
 						<strong>웹툰</strong>
 					</div>
-					<div>
-						<button><img src="./images/down-icon.png" alt="">펼치기</button>
+					<div class="webImg">
+						<button><img src="./images/down-icon.png" alt=""></button>
 					</div>
 				</div>
 				<!-- 인기 주제 판! -->
-				<div class="pan">
-					<div>
-						<div>
+				<div class="pan con">
+					<div class="panD">
 							<strong>인기 주제 판을 확인해 보세요!</strong>
-						</div>
-						<div>
 							<p>판관리</p>
-						</div>
 					</div>
 					<div>
-						<ul>
-							<li><a href="#"><img src="./images/pan1.png" alt="">영화판<img src="./images/go-icon.png" alt=""></a></li>
-							<li><a href="#"><img src="./images/pan2.png" alt="">뿜판<img src="./images/go-icon.png" alt=""></a></li>
-							<li><a href="#"><img src="./images/pan3.png" alt="">웹툰판<img src="./images/go-icon.png" alt=""></a></li>
-							<li><a href="#"><img src="./images/pan4.png" alt="">경제M판<img src="./images/go-icon.png" alt=""></a></li>
+						<ul class="panUl">
+							<li class="panLi">
+								<a href="#">
+									<img src="./images/pan1.png" alt="">영화판
+									<img src="./images/go-icon.png" alt="">
+								</a>
+							</li>
+							<li class="panLi">
+								<a href="#">
+									<img src="./images/pan2.png" alt="">뿜판
+									<img src="./images/go-icon.png" alt="">
+								</a>
+							</li>
+							<li class="panLi">
+								<a href="#">
+									<img src="./images/pan3.png" alt="">웹툰판
+									<img src="./images/go-icon.png" alt="">
+								</a>
+							</li>
+							<li class="panLi">
+								<a href="#">
+									<img src="./images/pan4.png" alt="">경제M판
+									<img src="./images/go-icon.png" alt="">
+								</a>
+							</li>
 						</ul>
 					</div>
 				</div>
 
 				<!-- 공지사항 -->
-				<div class="alarm">
-					<a href="#">
-						<span>네이버앱 업데이트 사전 안내</span>
-						<img src="./images/go-icon.png" alt="">
+				<div class="alarm con">
+					<a href="#" class="alarmA">
+						<div class="alarmAD">
+							<span class="alarmBtn">알립니다</span>
+							<span class="alarmP">네이버앱 업데이트 사전 안내</span>
+						</div>
+						<img src="./images/go-icon.png" alt="go">
 					</a>
 				</div>
 			</section>

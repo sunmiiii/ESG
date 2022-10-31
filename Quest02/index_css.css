@@ -7,80 +7,231 @@ body{
 /* 동그라미 지우기 */
 ul, ol{
   list-style: none;
-  padding-inline-start: 0;
+  padding:0;
+  margin:0;
 }
 /* 밑줄삭제, 일반글씨처럼 보임 */
 a{
   text-decoration: none;
 }
+/* 차이 방지 */
+p{
+  margin:0;
+}
+/* 버튼스타일 삭제 */
+button{
+  padding: 0;
+  border: 0;
+  background: none;
+}
+/* 헤더부분 전체 */
 .container{
   display: flex;
   justify-self: flex-start;
   margin-top: 10px;
 }
+/* 헤더 왼쪽아이콘 */
 .left_icon{
   margin-right: auto;
 }
+/* 헤더 오른쪽아이콘 */
 .right_icon{
   display: flex;
   justify-items: center;
   align-items: center;
 }
+/* 헤더 오른쪽아이콘 간격 및 배경색 */
 .bgColor{
   margin-left: 10px;
   background-color: #eee;
 }
+/* 헤더 오른쪽아이콘 페이 */
 .pay{
-  border-radius: 25%;
+  text-align: center;
+  height: 30px;
+  width: 60px;
+  border-radius: 30%;
 }
+/* 헤더 오른쪽아이콘 메일 */
 .mail{
+  text-align: center;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
 }
+/* 검색창 위 로고 */
 .nLogo{
   padding-top: 5%;
+  text-align:center;
 }
+/* 검색창 */
+.inputF{
+  position: relative;
+}
+/* 아이콘들 */
+.sch_icon{
+  position: absolute;
+  right:118px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.blind{display:none;}
+/* 임시? */
 #center{
   width:100%;max-width:800px;margin:0 auto;background:gainsboro;
 }
-.nLogo{
-  text-align:center;
-}
+/* 검색창 가운데 정렬 */
 .search{
   text-align:center;
 }
+/* 검색창 */
 input{
   width: 600px;
   height: 50px;
 }
+/* 검색창 밑 목록들 */
 .ull{
   width:88%;display: flex;flex-wrap: wrap;margin:0 auto;
 }
+/* 목록들 간격 */
 .ull .lis{
   width:25%;
 }
+/* 목록 아이콘, 글씨 가운데 정렬 */
 .lis p, .imgCon{
   text-align: center;
 }
+/* 목록 아이콘 모양 조절 */
 .imgCon img{
   margin-top: 10px;
   width: 50px;
   height: 50px;
   border-radius: 25%;
 }
-.todayWt, .weekWt, .corona, .korea_102, .app, .webtoon, .pan, .alarm{
-  background:#fff; margin:0 auto; width:95%;
+/* 오늘 날씨 */
+.toA{
   display: flex;
+  align-items: center;
+}
+.con{
+  background:#fff; margin:0 auto; width:95%;
+  /* display: flex; */
+  padding:20px;
+  box-sizing: border-box;
+  border-radius: 10px 10px 0 0 ;
   margin-top: 10px;
 }
+/*  */
+.todayWt{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 0;
+}
+/* 날씨, 주소 */
+.weD{
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+/* 이번주날씨, 요일별 날씨 */
+.wtList, .weList{
+  display: table;
+  width: 100%;
+}
+.wtList{
+  padding-top: 25px;
+  text-align: center;
+}
+/* 이번주 날씨 나열 */
+.weLi{
+  display: inline-table;
+  line-height: 30px;
+}
+/*  */
+.weLi a{
+  background-color: #eee;
+  padding: 8px 10px;
+  margin-right: 5px;
+}
+/* 요일별 날씨 나열 */
+.wtList .wtLi{
+  display: table-cell;
+  width: 11.111111111%;
+}
+.corona{
+  display: flex;
+}
+/* 코로나 현황 사이즈 조절 */
 .kocrn{
   width: 50%;
 }
-.app{
-  justify-items: flex-start;
+.i_102{
+  text-align: center;
 }
+/* 앱 사용하기 시작점 */
+.appA{
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+}
+.appAD{
+  display: flex;
+  align-items: center;
+}
+/* 웹툰 전체,공지사항 가운데 정렬 */
+.webtoon, .alarm{
+  justify-items: center;
+  align-items: center; 
+}
+/* 웹툰글씨 왼쪽정렬 */
+div.webStr{
+  float: left; width: 95%; 
+}
+/* 웹툰 아이콘 오른쪽 정렬 */
+div.webImg{
+  float: right; 
+}
+/* 웹툰, 알림창 크기조절 */
 .webtoon, .alarm{
   height: 65px;
 }
+/* 인기 주제 판! */
+.panD{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.panUl{
+  display: flex;
+  flex-wrap: wrap;
+}
+.panLi{
+  width: 50%;
+  padding-right: 2px;
+  padding-bottom: 6px;
+  box-sizing: border-box;
+}
+.panLi a{
+  background-color: #eee;
+  padding: 10px 10px;
+  width: 98%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+/* 공지사항 */
+.alarmA{
+  display: flex;
+  justify-content: space-between;
+}
+/* 알립니다 */
+.alarmBtn{
+  border:1px solid #03c75a;padding:3px 8px;font-size:14px;font-weight:bold;color:#03c75a;border-radius:13px;margin-right:6px;letter-spacing:-0.08em;
+}
+/* 네이버앱 업뎃~ */
+.alarmP{
+  font-size:15px;font-weight:600;color:rgb(121, 116, 116);letter-spacing:-0.08em;
+}
+/* 푸터 정렬 */
 footer{
   margin-top: 5%;
   text-align:center;
