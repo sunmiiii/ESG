@@ -42,11 +42,11 @@ button{
 }
 /* 헤더 왼쪽 이미지 사이즈 조절 */
 .cate{
-  width:"50px"; height:"40px"
+  width:50px; height:40px
 }
 /* 헤더 오른쪽 qr 이미지 사이즈 조절 */
 .n_qr{
-  width:"60px"; height:"35px";
+  width:60px; height:35px;
 }
 /* 헤더 오른쪽이미지 간격 및 배경색 */
 .bgColor{
@@ -119,7 +119,10 @@ input{
 }
 /* 검색창 밑 목록들 */
 .ull{
-  width:75%;display: flex;flex-wrap: wrap;margin:0 auto;
+  width:75%;
+  display: flex;
+  flex-wrap: wrap;
+  margin:0 auto;
   padding-top: 20px;
   padding-bottom: 15%;
 }
@@ -177,17 +180,25 @@ input{
   justify-content: space-between;
   padding-right: 0;
 }
+.weDD{
+  display: flex;
+}
 /* 날씨, 주소 */
 .weD{
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
+}
+.down{
+  width: 15px;
+  height: 10px;
 }
 .weD strong{
   padding-right: 15px;
   font-size: 20px;
 }
-.weD img{
+.target{
   width: 20px;
   height: 20px;
 }
@@ -327,6 +338,10 @@ input{
 /* ~판 글자 색상 */
 .panS{
   color: rgb(110, 110, 110);
+}
+/* 이미지와 글씨 간격 조정 */
+.panImg{
+  vertical-align: bottom;
 }
 /* 공지사항 */
 .alarmA{
