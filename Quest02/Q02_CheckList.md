@@ -33,7 +33,7 @@ border와 content 사이의 영역(padding), border 바깥의 영역(margin)으�
 ※ element들은 웹 페이지 전체 너비만큼의 영역을 차지하는 element를 block-level element,  
 컨텐츠가 있는 부분의 너비만큼의 영역을 차지하는 element인 inline element로 나뉜다.  
 
-![C:\Users\USER\Desktop]
+<img src="C:\Users\USER\Desktop"/>
 
 ### 4. float 속성은 왜 좋지 않을까요?  
 먼저 float이란, 한 요소가 보통 흐름으로부터 빠져나와서 텍스트 및 인라인 요소가 그 주위를 감싸는  
