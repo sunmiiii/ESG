@@ -43,11 +43,11 @@ float을 이용해 레이아웃을 작성할 때, 부모 요소가 자식 요소
 
 ### 6. CSS의 비슷한 요소들을 어떤 식으로 정리할 수 있을까요?  
 반복적인 디자인 요소를 적용시 원하는 선택자를 선택하여 적용  
-ex)  
-\<h1>hello world1<h1/\>  
-   \<h1 class="hw">hello world2<h1/\>  
-   \<h1 class="hw">hello world3<h1/\>  
-.hw{color:red}
-
+|선택자|사용법|
+|-----|------|
+|전체선택자| * { color:red; }|
+|아이디선택자| #sun { color:red; }|
+|클래스선택자| .mi { color:red; }|
+|타입선택자| p { color:red; }|
 
 
