@@ -42,7 +42,8 @@ float을 이용해 레이아웃을 작성할 때, 부모 요소가 자식 요소
 
 ### 6. CSS의 비슷한 요소들을 어떤 식으로 정리할 수 있을까요?  
 반복적인 디자인 요소를 적용시 클래스를 사용한다.  (선택자 사용)  
-ex)\<h1>hello world1<h1/\>  
+ex)
+\<h1>hello world1<h1/\>  
    \<h1 class="hw">hello world2<h1/\>  
    \<h1 class="hw">hello world3<h1/\>  
 .hw{color:red}
