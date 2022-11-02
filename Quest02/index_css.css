@@ -57,19 +57,17 @@ button{
   align-items: center;
   border: 1px solid rgb(228, 225, 225);
 }
-/* 헤더 오른쪽이미지 페이 */
+/* 헤더 오른쪽이미지 페이, 메일, 로고 */
 .pay{
   height: 30px;
   width: 60px;
   border-radius: 30px;
 }
-/* 헤더 오른쪽이미지 메일 */
 .mail{
   height: 30px;
   width: 30px;
   border-radius: 50%;
 }
-/* 검색창 위 로고 */
 .nLogo{
   padding-top: 5%;
   padding-bottom: 20px;
@@ -87,26 +85,11 @@ button{
 /* 검색창모양 */
 .inputT{
   border: 1px solid #03c75a;font-size: 15px;font-weight: bold;
-  color: #03c75a;border-radius: 4px;margin-right:6px;letter-spacing:-0.08em;
+  color: #000000;border-radius: 4px;margin-right:6px;letter-spacing:-0.08em;
 }
 /* 인풋 참고말 색변경 */
 input::placeholder{
-  color:#ccc;padding-left: 15px;}
-/* 이미지들 */
-.sch_icon{
-  position: absolute;
-  right:118px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.sch_icons{
-  padding-right: 10px;
-}
-.blind{display:none;}
-/* main~사이즈 조절 */
-#center{
-  width:100%;max-width:800px;margin:0 auto;
-  background:linear-gradient(white,rgb(230, 230, 230));
+  color:#ccc;padding-left: 15px;
 }
 /* 검색창 가운데 정렬 */
 .search{
@@ -116,6 +99,24 @@ input::placeholder{
 input{
   width: 600px;
   height: 50px;
+}
+/* 검색창 이미지들 */
+.sch_icon{
+  position: absolute;
+  right:118px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sch_icons{
+  padding-right: 10px;
+}
+.blind{
+  display:none;
+}
+/* main~사이즈 조절 */
+#center{
+  width:100%;max-width:800px;margin:0 auto;
+  background:linear-gradient(white,rgb(230, 230, 230));
 }
 /* 검색창 밑 목록들 */
 .ull{
@@ -150,7 +151,7 @@ input{
   display: flex;
   align-items: center;
 }
-/* 날씨 글씨 간격 */
+/* 날씨 글자 간격 */
 .weat2{
   padding-left: 10px;
 }
@@ -161,6 +162,7 @@ input{
   font-size: 14px;
   padding-top: 5px;
 }
+/* now 이미지 사이즈 조절 */
 .nowImg{
   width: 70px;
   height: 50px;
@@ -174,12 +176,13 @@ input{
   border-radius: 10px 10px 0 0 ;
   margin-top: 10px;
 }
-/* 오늘 날씨 양 옆으로 나누기(패딩없애기 위해 con밑에 작성 */
+/* 오늘 날씨 양 옆으로 나누기(패딩없애기 위해 con밑에 작성) */
 .todayWt{
   display: flex;
   justify-content: space-between;
   padding-right: 0;
 }
+/* 이번주 날씨 */
 .weDD{
   display: flex;
 }
@@ -203,20 +206,21 @@ input{
   height: 20px;
 }
 /* 이번주날씨, 요일별 날씨 */
-.wtList, .weList{
+.weList{
   display: table;
   width: 100%;
 }
 .wtList{
+  display: table;
+  width: 100%;
   padding-top: 25px;
   text-align: center;
 }
-/* 원하는 날씨, 미세먼지 등 나열 */
+/* 시간대별 날씨, 미세먼지 등 나열 */
 .weLi{
   display: inline-table;
   line-height: 30px;
 }
-/* 오늘 날씨 ul */
 .weLi a{
   background-color: #eee;
   padding: 8px 10px;
@@ -228,7 +232,7 @@ input{
   display: table-cell;
   width: 11.111111111%;
 }
-/* 요일별 날씨 */
+/* 요일별 날씨, 온도 사이 막대바 */
 .wtbobo{
   display: inline-block;
   border-left: solid rgb(224, 224, 224);
@@ -293,7 +297,7 @@ input{
   border: 1px solid #2586ee;padding: 9px 10px;font-size: 13px;font-weight: bold;
   color: #2586ee;border-radius: 3px;margin-right:6px;letter-spacing:-0.08em;
 }
-/* 웹툰 전체,공지사항 가운데 정렬 */
+/* 웹툰 ,공지사항 가운데 정렬 */
 .webtoon, .alarm{
   justify-items: center;
   align-items: center; 
@@ -375,7 +379,7 @@ footer{
 }
 .foot3 img{
   width: 100px;
-  height: 25px;
+  height: 22px;
   padding-bottom: 20%;
 }
 
