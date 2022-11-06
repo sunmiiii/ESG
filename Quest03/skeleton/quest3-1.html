@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+
+		<script>
+			var num = prompt("몇줄하실래용?");
+			var star = "";
+
+			for(var i = 1; i <= num; i++){ // 줄
+				for(var k = i; k < num; k++){ // 별 앞에 띄워주기
+					star += " ";
+				}
+				for(var j = 1; j <= i*2-1; j++){ // 별!
+					star += "*";
+				}
+				star += "\n"; // 개행
+			}
+			console.log(star);
+
+		</script>
+	</body>
+</html>
