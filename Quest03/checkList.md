@@ -69,11 +69,41 @@ async/await 제공
  
  ※ 배열인 경우 배열.forEach(), 객체인 경우 Object.keys(객체) - 예상치 못한 버그 예방
 
-## 3. 자바스크립트를 통해 DOM 객체에 CSS Class를 주거나 없애려면 어떻게 해야 하나요?
+## 3. 자바스크립트를 통해 DOM 객체에 CSS Class를 주거나 없애려면 어떻게 해야 하나요?  
+- 클래스 이름 설정/변경  
+document.getElementById('ex').className = '이름';  
+- 클래스 추가  
+document.getElementById('ex').className += '이름';  
+document.getElementById('ex').classList.add('이름');  
+- 클래스 변경  
+document.getElementById('ex').classList.replace('변경전', '변경후');  
+- 클래스 삭제  
+document.getElementById('ex').classList.remove('이름');  
+- 클래스 토글  
+document.getElementById('ex').classList.toggle('이름');  
+※ 클래스를 관리 할때는 querySelector()에 사용하는 것과 달리 클래스 이름 앞에 점(.)을 사용하지 않는다.  
+ ### 3-1. IE9나 그 이전의 옛날 브라우저들에서는 어떻게 해야 하나요?  
 
- ### 3-1. IE9나 그 이전의 옛날 브라우저들에서는 어떻게 해야 하나요?
-
-## 4. 자바스크립트의 변수가 유효한 범위는 어떻게 결정되나요?
+## 4. 자바스크립트의 변수가 유효한 범위는 어떻게 결정되나요?  
+자바스크립트에서 객체나 함수는 모두 변수(variable)이며, 변수의 유효 범위(scope)란 해당 변수가  
+접근할 수 있는 변수, 객체 그리고 함수의 집합을 의미한다.  
+1. 지역 변수(local variable)  
+함수 내에 선언된 변수, 선언된 함수 내에서만 유효하며, 함수가 종료되면 메모리에서 사라짐  
+함수의 매개변수 또한 함수 내에서 정의되는 지역 변수처럼 동작  
+ex)  
+function temp(){  
+var temp1 = 10; // 지역변수 temp1에 10 대입  
+document.write("temp1타입 : "+ typeof temp1);} // 타입 number로 나옴, 해당 밖에서 불러오면 undefined  
+2. 전역 변수(global variable)  
+함수 외부에서 선언된 변수, 프로그램 어느 영역에서나 접근 가능, 웹 페이지가 닫혀야만 메모리에서 사라짐  
+ex)  
+var temp2 = 10; // 전역 변수 선언  
+function temp(){  
+document.write("temp2 값 : "+ temp2); // 값 10
+temp2 = 20 }// 전역 변수 값을 함수 내부에서 변경
+temp(); // 함수 호출
+document.write("함수 호출 후 temp2 값 : "+temp2) // 20
+※ 자바스크립트에서 지역 변수를 선언할 때에는 반드시 var 키워드 사용하여 선언, 그렇지 않으면 전역 변수로 선언됨
 
  ### 4-1. var과 let으로 변수를 정의하는 방법들은 어떻게 다르게 동작하나요?
 
