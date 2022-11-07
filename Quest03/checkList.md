@@ -5,23 +5,23 @@
 - ES1~3(1999)  
 JavaScript의 가장 기본이 되는 기능만 존재함(hoisting,prototype,scope 등)  
 - ES5(2009)  
-배열에 forEach, map, filter, reduce, some, every와 같은 메소드 지원
-Object에 대한 getter/setter 지원
-JavaScript strict 모드 지원
-JSON지원(과거 XML 사용)
+배열에 forEach, map, filter, reduce, some, every와 같은 메소드 지원  
+Object에 대한 getter/setter 지원  
+JavaScript strict 모드 지원  
+JSON지원(과거 XML 사용)  
 - ES6(ES2015)  
-let, const 키워드 추가
-기존의 변수는 함수 scope를 가진 var로 선언, 기존 상수형 키워드 없어 구분 키워드 let,const 추가
-arrow 문법 지원
-this 바인딩 하지 않음, 선언된 scope의 this를 가르킨다.
-iterator/generator 추가
-module import/export 추가
-Promise 도입
-- ES7(ES2016)
-"**" 제곱 연산자 제공
-Array.includes 배열에 해당 요소가 존재하는지 확인하는 메소드 제공
-- ES8(ES2017)
-async/await 제공
+let, const 키워드 추가  
+기존의 변수는 함수 scope를 가진 var로 선언, 기존 상수형 키워드 없어 구분 키워드 let,const 추가  
+arrow 문법 지원  
+this 바인딩 하지 않음, 선언된 scope의 this를 가르킨다.  
+iterator/generator 추가  
+module import/export 추가  
+Promise 도입  
+- ES7(ES2016)  
+"**" 제곱 연산자 제공  
+Array.includes 배열에 해당 요소가 존재하는지 확인하는 메소드 제공  
+- ES8(ES2017)  
+async/await 제공  
 
  ### 1-2.자바스크립트의 표준은 어떻게 제정될까요?
  * 0단계 : 허수아비(strawman)  
