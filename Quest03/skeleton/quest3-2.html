@@ -33,9 +33,23 @@
 		</section>
 
 		<script>
-			// 하나의 박스를 클릭했을때 해당 박스만 색변환			
-				var row1 = document.getElementsByClassName("row1");
-				
+			
+			// 첫번째 박스줄
+			var row1 = document.getElementsByClassName("row1")[0];
+			var row1Sq = row1.getElementsByClassName("square");
+			var row1Arr = []
+
+			// 배열로 변환
+			for(var i = 0; i < 4; i++){
+				row1Arr.push(row1Sq[i]);
+			}
+			console.log(row1Arr);
+			
+			console.log(typeof(row1Arr));
+
+
+			
+
 		</script>
 	</body>
 </html>
