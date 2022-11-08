@@ -1,59 +1,26 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
 
-		<style>
-			.thumb-bar img{
-				display: flex;
-				width: 20%;
-			}
+    <title>Image gallery</title>
 
-		</style>
-
-	</head>
+    <link rel="stylesheet" href="style.css">
+    
+  </head>
 	<body>
 		<h1>Image gallery example</h1>
 
-		<div class="full-img">
-			<img src="images/pic1.jpg" class="displayed-img">
-			<div class="overlay"></div>
-			<button class="dark">Darken</button>
+    <div class="full-img">
+      <img class="displayed-img" src="images/pic1.jpg" alt="Closeup of a human eye">
+      <div class="overlay"></div>
+      <button class="dark">Darken</button>
+    </div>
+
+    <div class="thumb-bar">
+
 		</div>
 
-		<div class="thumb-bar">
-			<img src="images/pic1.jpg" alt="">
-			<img src="images/pic2.jpg" alt="">
-			<img src="images/pic3.jpg" alt="">
-			<img src="images/pic4.jpg" alt="">
-			<img src="images/pic5.jpg" alt="">
-		</div>
-
-		<script>
-			var displayedImg = document.getElementsByClassName("displayed-img")[0];
-			console.log(displayedImg);
-			var btn = document.getElementsByTagName("button");
-			var overlay = document.getElementsByClassName("overlay");
-
-			
-
-
-
-
-
-
-
-
-
-			// if(document.getElementsByClassName("dark")=="dark"){
-			// 	btn.setAttribute("dark","light");
-			// 	btn.textContent = "Lighten";
-			// 	overlay.style.backgroundColor = "rgba(0,0,0,0.5)";
-			// } else if(document.getElementsByClassName("light")=="light"){
-			// 	btn.setAttribute("light","dark");
-			// 	btn.textContent = "Darken";
-			// 	overlay.style.backgroundColor = "rgba(0,0,0,0)";
-			// }
-		</script>
+		<script src="main.js"></script>
 	</body>
 </html>
