@@ -44,11 +44,37 @@
 				row1Arr.push(row1Sq[i]);
 			}
 			console.log(row1Arr);
-			
-			console.log(typeof(row1Arr));
 
+			// 첫번째 줄 박스 클릭했을 때 색 변환
+			function row1Click(item){
+				item.addEventListener("click",function(){
+					if(item.style.backgroundColor != "yellow"){
+						item.style.backgroundColor = "yellow";
+					} else{
+						item.style.backgroundColor = "white";
+					}
+				})
+			}
+			row1Arr.forEach(row1Click);
 
-			
+			// 두번째 박스줄
+			var row2 = document.getElementsByClassName("row2")[0];
+			var row2Sq = row2.getElementsByClassName("square");
+			var row2Arr = []
+
+			// 배열로 변환
+			for(var i = 0; i < 4; i++){
+				row2Arr.push(row2Sq[i]);
+			}
+			console.log(row2Arr);
+
+			// 두번째 줄 박스 클릭했을 때 추가 또는 삭제
+			function row2Click(item){
+				item.addEventListener("click",function(){
+				item.classList.toggle("enabled")
+				})
+			}
+			row2Arr.forEach(row2Click);
 
 		</script>
 	</body>
