@@ -1,5 +1,5 @@
-/* HTMLCollection과 같은 live 객체는 반복문을 순회하면서 노드가 변경되는 경우 */
-/* 개발자의 의도와 달라질 수 있으니 배열로 바꾸어 사용 */
+/* HTMLCollection과 같은 live 객체는 반복문을 순회하면서 노드가 변경되는 경우
+   개발자의 의도와 달라질 수 있으니 배열로 바꾸어 사용 */
 
 /* 사용되어질 요소들 가지고오기 */
 var displayedImg = document.getElementsByClassName("displayed-img")[0];

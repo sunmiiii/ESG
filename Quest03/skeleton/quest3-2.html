@@ -33,9 +33,9 @@
 		</section>
 
 		<script>
-			/* 문제2) */
-			/* 2-1) 첫째 줄 사각형 클릭시 배경색 노랑색↔흰색 변경 */
-			/* 2-2) 둘째 줄 사각형 클릭시 클래스명 추가, 제거(추가되면 초록색배경, 제거되면 다시 흰색배경) */
+			/* 문제2)
+				 2-1) 첫째 줄 사각형 클릭시 배경색 노랑색↔흰색 변경
+				 2-2) 둘째 줄 사각형 클릭시 클래스명 추가, 제거(추가되면 초록색배경, 제거되면 다시 흰색배경) */
 
 			/* 첫번째 박스줄 */
 			var row1 = document.getElementsByClassName("row1")[0];
@@ -67,12 +67,12 @@
 			}
 			row1Arr.forEach(row1Click);
 			
-			/* if문으로 작성했을 때 */
-			/* if(bgcolor.style.backgroundColor != "yellow"){ */
-			/* 	bgcolor.style.backgroundColor = "yellow"; */
-			/* } else{ */
-			/* 	bgcolor.style.backgroundColor = "white"; */
-			/* } */
+			/* if문으로 작성했을 때
+			 if(bgcolor.style.backgroundColor != "yellow"){
+				bgcolor.style.backgroundColor = "yellow";
+			 } else{
+			 	bgcolor.style.backgroundColor = "white";
+			 } */
 
 			/* 두번째 줄 박스 클릭했을 때 추가 또는 삭제 */
 			function row2Click(ar){
