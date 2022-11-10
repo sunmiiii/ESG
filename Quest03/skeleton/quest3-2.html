@@ -33,51 +33,51 @@
 		</section>
 
 		<script>
-			// 문제2)
-			// 2-1) 첫째 줄 사각형 클릭시 배경색 노랑색↔흰색 변경
-			// 2-2) 둘째 줄 사각형 클릭시 클래스명 추가, 제거(추가되면 초록색배경, 제거되면 다시 흰색배경)
+			/* 문제2) */
+			/* 2-1) 첫째 줄 사각형 클릭시 배경색 노랑색↔흰색 변경 */
+			/* 2-2) 둘째 줄 사각형 클릭시 클래스명 추가, 제거(추가되면 초록색배경, 제거되면 다시 흰색배경) */
 
-			// 첫번째 박스줄
+			/* 첫번째 박스줄 */
 			var row1 = document.getElementsByClassName("row1")[0];
-			// row1 자식 square 가져옴
+			/* row1 자식 square 가져옴 */
 			var row1Sq = row1.getElementsByClassName("square");
 			var row1Arr = [];
 
-			// 두번째 박스줄
+			/* 두번째 박스줄 */
 			var row2 = document.getElementsByClassName("row2")[0];
-			// row2 자식 square 가져옴
+			/* row2 자식 square 가져옴 */
 			var row2Sq = row2.getElementsByClassName("square");
 			var row2Arr = [];
 
-			// 유사배열 진짜배열로 변환
+			/* 유사배열 진짜배열로 변환 */
 			for(var i = 0; i < 4; i++){
 				row1Arr.push(row1Sq[i]);
 				row2Arr.push(row2Sq[i]);
 			}
-			// 배열 확인
+			/* 배열 확인 */
 			console.log(row1Arr);
 			console.log(row2Arr);
 
-			// 첫번째 줄 박스 클릭했을 때 색 변환
+			/* 첫번째 줄 박스 클릭했을 때 색 변환 */
 			function row1Click(bgcolor){
 				bgcolor.addEventListener("click",function(){
-					// 노랑색아니라면 노랑색, 노랑색이면 흰색
+					/* 노랑색아니라면 노랑색, 노랑색이면 흰색 */
 					bgcolor.style.backgroundColor !== "yellow"? bgcolor.style.backgroundColor = "yellow" : bgcolor.style.backgroundColor = "white";
 				});
 			}
 			row1Arr.forEach(row1Click);
 			
-			// if문으로 작성했을 때
-			// if(bgcolor.style.backgroundColor != "yellow"){
-			// 	bgcolor.style.backgroundColor = "yellow";
-			// } else{
-			// 	bgcolor.style.backgroundColor = "white";
-			// }
+			/* if문으로 작성했을 때 */
+			/* if(bgcolor.style.backgroundColor != "yellow"){ */
+			/* 	bgcolor.style.backgroundColor = "yellow"; */
+			/* } else{ */
+			/* 	bgcolor.style.backgroundColor = "white"; */
+			/* } */
 
-			// 두번째 줄 박스 클릭했을 때 추가 또는 삭제
+			/* 두번째 줄 박스 클릭했을 때 추가 또는 삭제 */
 			function row2Click(ar){
 				ar.addEventListener("click",function(){
-				// 클래스명에 enabled가 없다면 추가되고, 있다면 빠질 수 있게
+				/* 클래스명에 enabled가 없다면 추가되고, 있다면 빠질 수 있게 */
 				ar.classList.toggle("enabled")
 				});
 			}
