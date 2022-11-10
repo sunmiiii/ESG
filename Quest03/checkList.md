@@ -1,5 +1,4 @@
 ## 1. 자바스크립트는 버전별로 어떻게 변화하고 발전해 왔을까요?
-
  ### 1-1. 자바스크립트의 버전들을 가리키는 ES5, ES6, ES2016, ES2017 등은 무엇을 이야기할까요?
 ※ ES는 ECMAScript의 약어
 - ES1~3(1999)  
@@ -83,7 +82,6 @@ document.getElementById('ex').classList.remove('이름');
 document.getElementById('ex').classList.toggle('이름');  
 
 ※ 클래스를 관리 할때는 querySelector()에 사용하는 것과 달리 클래스 이름 앞에 점(.)을 사용하지 않는다.  
- ### 3-1. IE9나 그 이전의 옛날 브라우저들에서는 어떻게 해야 하나요?  
 
 ## 4. 자바스크립트의 변수가 유효한 범위는 어떻게 결정되나요?  
 자바스크립트에서 객체나 함수는 모두 변수(variable)이며, 변수의 유효 범위(scope)란 해당 변수가  
