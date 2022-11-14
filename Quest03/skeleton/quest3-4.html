@@ -38,8 +38,9 @@
     </div>
 
     <script>
-      /** 
-        # 재령씨를 위한 게임룰 #
+      
+    /** 
+      # 재령씨를 위한 게임룰 #
         
 		정답이 176 이라고 했을때
 		1. 485 - 들어맞는 숫자가 아예 없으므로 아웃. 이때부터 4, 5, 8이 후보에서 빠지므로 남는 숫자는 1, 2, 3, 6, 7, 9다  (resultArea 안에 다음과 같이 표현  1회: OUT)
@@ -50,6 +51,34 @@
       */
       	
       /** TODO: 여기에 게임이 작동될 수 있도록 스크립트를 짜보세요  */
+      var setDigitSubmit = document.getElementsByClassName('setDigitSubmit')[0];
+      var guessField = document.getElementById('guessField');
+      var guessSubmit = document.getElementsByClassName('guessSubmit')[0];
+      var resultArea = document.getElementsByClassName('resultArea')[0];
+
+      var numbers = [];
+      for(var i = 1; i < 10; i++){
+        numbers.push(i);
+      }
+      console.log(numbers);
+
+      var ranNum = [];
+      for(var i = 1; i < 4; i++){ /** 3번 반복*/ 
+        var num = Math.floor(Math.random()*numbers.length); /** 1~9*/
+        ranNum.push(numbers[num]);
+        /** splice(start,num1...)*/
+        numbers.splice(num,1);
+      }
+      console.log(ranNum.join(''));
+      
+      var chance = 0; /** 기회변수 */
+
+      setDigitSubmit.addEventListener('click', function(){
+        guessField = guessField.value;
+        if(ranNum.join('')===guessField){
+          resultArea.textContent = "홈런~";
+        }
+      });
       
 
     </script>
