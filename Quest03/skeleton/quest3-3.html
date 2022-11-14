@@ -40,6 +40,101 @@
     <script>
       /** TODO: 여기에 게임이 작동될 수 있도록 스크립트를 짜보세요  */
 
+      /* 사용할 요소들 불러오기 */
+      var setDigitNum = document.getElementById('setDigitNum'); /* 입력받은 자릿수 값*/
+      var setDigitSubmit = document.getElementsByClassName('setDigitSubmit')[0]; /* 자릿수 입력완료 후 버튼 */
+      var randA = document.getElementById('randA'); /* 랜덤A 변수*/
+      var randB = document.getElementById('randB'); /* 랜덤B 변수*/
+      var guessField = document.getElementsByClassName('guessField')[0]; /* 랜덤A*랜덤B의 값을 입력받을 변수*/
+      var guessSubmit = document.getElementsByClassName('guessSubmit')[0]; /* 입력 후 정답확인버튼*/
+      var resultArea = document.getElementsByClassName('resultArea')[0]; /* 정답여부확인 */
+
+      /* 자릿수에 맞는 최소, 최대값 변수 선언
+         Math.random()*((최대값-최소값)+최소값); */
+      /* 
+      var firstRandA = Math.floor(Math.random()*(10-1))+1; 1~9 
+      var firstRandB = Math.floor(Math.random()*(10-1))+1; 1~9 
+
+      var secondRandA = Math.floor(Math.random()*(100-10))+10; 10~99 
+      var secondRandB = Math.floor(Math.random()*(100-10))+10; 10~99 
+
+      var thirdRandA = Math.floor(Math.random()*(1000-100))+100; 100~999 
+      var thirdRandB = Math.floor(Math.random()*(1000-100))+100; 100~999 */
+
+      var a = 0; /* randA 랜덤 값 담을 변수*/
+      var b = 0; /* randB 랜덤 값 담을 변수*/
+      var abResult = 0; /* randA * randB 결과값 담을 변수*/
+
+      // randA.innerText = firstRandA;
+      // randB.innerText = firstRandB;
+      /* 자릿수 설정 버튼클릭시 자릿수에 맞는 최소, 최대값 불러오기*/
+      setDigitSubmit.addEventListener('click',function(){
+        setDigitNum = Number(setDigitNum.value); /* string으로 나와서 number로 형변환*/
+        switch(setDigitNum){
+          case 1:  
+            a = Math.floor(Math.random()*(10-1))+1;
+            b = Math.floor(Math.random()*(10-1))+1;      
+            abResult = a*b;
+            randA.textContent = a;
+            randB.textContent = b;
+            break;
+          case 2:          
+            a = Math.floor(Math.random()*(100-10))+10;
+            b = Math.floor(Math.random()*(100-10))+10;      
+            abResult = a*b;
+            randA.textContent = a;
+            randB.textContent = b;
+            break;
+          case 3:          
+            a = Math.floor(Math.random()*(1000-100))+100;
+            b = Math.floor(Math.random()*(1000-100))+100;      
+            abResult = a*b;
+            randA.textContent = a;
+            randB.textContent = b;
+            break;
+          default:
+            alert('번호를 잘못 입력하셨습니다. \n재실행 후 1~3자릿수 중에 골라주세요.');
+            break; 
+        }
+      });
+      // console.log(randA);
+      // console.log(randB);
+      // console.log(abResult);
+
+
+      var info = ""; /* 정답인지 아닌지 담을 변수*/
+
+      /* 정답입력후 정답확인버튼 클릭, 정답여부 확인*/
+      guessSubmit.addEventListener('click',function(){
+        guessField = Number(guessField.value);
+        if(guessField===abResult){
+          /* createTextNode : 선택한 요소에 텍스트 추가*/
+          info = document.createTextNode("★ 정답입니다 ★");
+        } else{
+          info = document.createTextNode("틀렸습니다");
+        }
+        resultArea.appendChild(info);
+      });
+
+      
+      // /* 랜덤 지정할 자릿수*/
+      // setDigitSubmit.addEventListener('click',function(){
+      //   setDigitNum = setDigitNum.value;
+      //   randA = Math.floor(Math.random()*setDigitNum)+1;
+      //   randB = Math.floor(Math.random()*setDigitNum)+1;
+      //   console.log(randA);
+      //   console.log(randB);
+      // });
+
+      // guessSubmit.addEventListener('click',function(){
+      //   if(randA*randB===guessField){
+      //     document.write("정답입니다")
+      //   }
+      // });
+      
+      
+
+
     </script>
   </body>
 </html>
