@@ -37,8 +37,82 @@
 
     <script>
       /** TODO: 여기에 게임이 작동될 수 있도록 스크립트를 짜보세요  */
+
+      /** 사용할 요소 가져오기 */
+      var setPrsSubmit = document.getElementsByClassName('setPrsSubmit')[0];
+      var btnScissors = document.getElementById('btnScissors');
+      var btnRock = document.getElementById('btnRock');
+      var btnPaper = document.getElementById('btnPaper');
+      var resultArea = document.getElementsByClassName('resultArea')[0];
+
+      var ranGame = ['가위','바위','보'];
+      var ranNum = 0;
       
 
+      /** 게임시작 버튼을 누르면 랜덤 가위,바위,보 설정! */
+      setPrsSubmit.addEventListener('click',function (){
+        ranNum = Math.floor(Math.random()*ranGame.length);
+        ranGame = ranGame[ranNum];
+        console.log('게임시작할때 : ' + ranGame);
+      });
+
+
+      /** 가위버튼 클릭시 */
+      btnScissors.addEventListener('click',function(){
+        /** 랜덤 가위 값일때 */
+        switch (ranGame){
+          case '가위':
+            resultArea.textContent = '가위일때 비겼당';
+            break;
+          case '바위':
+            resultArea.textContent = '가위일때 졌당';
+            break;
+          case '보':
+            resultArea.textContent = '가위일때 이겼당';
+            break;
+          default:
+            break;
+        }
+      });
+        
+      /** 바위버튼 클릭시 */
+      btnRock.addEventListener('click',function(){
+        /** 랜덤 바위 값일때 */
+        switch(ranGame){
+          case '가위':
+            resultArea.textContent = '바위일때 이겼당';
+            break;
+          case '바위':
+            resultArea.textContent = '바위일때 비겼당';
+            break;
+          case '보':
+            resultArea.textContent = '바위일때 졌당';
+            break;
+          default:
+            break;
+        }
+      });
+        
+      /** 보버튼 클릭시 */
+      btnPaper.addEventListener('click',function(){
+        /** 랜덤 보 값일때 */
+        switch(ranGame){
+          case '가위':
+            resultArea.textContent = '보일때 졌당';
+            break;
+          case '바위':
+            resultArea.textContent = '보일때 이겼당';
+            break;
+          case '보':
+            resultArea.textContent = '보일때 비겼당';
+            break;
+          default:
+            break;
+        }
+      });
+              
+              
+      
     </script>
   </body>
 </html>
