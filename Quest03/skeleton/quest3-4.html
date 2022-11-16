@@ -68,8 +68,9 @@
           /** arNums.length를 사용한 이유는 arNums에서 splice를 사용하여 요소 삭제시 수를 반영하기 위해 
               splice() - 배열의 해당 위치에 배열 요소를 추가하거나 삭제
               select는 splice를 이용해 랜덤값, 랜덤 값에서 1개의 길이만큼 배열에서 뺌 */
-          var select = arNums.splice(Math.floor(Math.random() * arNums.length), 1);
-          arRanNum.push(select);     
+          var select = Math.floor(Math.random() * arNums.length);
+          arRanNum.push(arNums[select]);     
+          arNums.splice(select,1);     
         }
         console.log('랜덤번호 : ' + arRanNum);
       };
