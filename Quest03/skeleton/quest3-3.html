@@ -41,13 +41,13 @@
       /** TODO: 여기에 게임이 작동될 수 있도록 스크립트를 짜보세요 */
 
       /** 사용할 요소들 불러오기 */ 
-      var setDigitNum = document.getElementById('setDigitNum'); /** 입력받은 자릿수 값 */   
-      var setDigitSubmit = document.getElementsByClassName('setDigitSubmit')[0]; /** 자릿수 입력완료 후 버튼 */
-      var randA = document.getElementById('randA'); /** 랜덤A 변수 */
-      var randB = document.getElementById('randB'); /** 랜덤B 변수 */
-      var guessField = document.getElementsByClassName('guessField')[0]; /** 랜덤A*랜덤B의 값을 입력받을 변수 */
+      var setDigitNum = document.getElementById('setDigitNum'); /** 입력받은 자릿수 input */   
+      var setDigitSubmit = document.getElementsByClassName('setDigitSubmit')[0]; /** 자릿수 입력완료 후 등록버튼 */
+      var randA = document.getElementById('randA'); /** 랜덤A */
+      var randB = document.getElementById('randB'); /** 랜덤B */
+      var guessField = document.getElementsByClassName('guessField')[0]; /** 랜덤A * 랜덤B의 확인후 입력받을 input */
       var guessSubmit = document.getElementsByClassName('guessSubmit')[0]; /** 입력 후 정답확인버튼 */
-      var resultArea = document.getElementsByClassName('resultArea')[0]; /** 정답여부확인 */
+      var resultArea = document.getElementsByClassName('resultArea')[0]; /** 사용자의 정답이 맞는지 결과값 영역 */
 
       /** 
       var firstRandA = Math.floor(Math.random()*(10-1))+1; 1~9 
@@ -68,16 +68,15 @@
           Math.random()*((최대값-최소값)+최소값); */
       function aGetRandom(min,max){
         aRand = Math.floor((Math.random()*(max-min)+min));
+        /** 랜덤값 생성후 랜덤A의 컨텐츠 변경 */
         randA.innerHTML = aRand;
       };
       function bGetRandom(min,max){
         bRand = Math.floor((Math.random()*(max-min)+min));
+        /** 랜덤값 생성후 랜덤B의 컨텐츠 변경 */
         randB.innerHTML = bRand;
       };
-      function abMult(a,b){
-        return a*b;
-      };
-
+      
       /** 자릿수 설정 버튼클릭시 자릿수에 맞는 최소, 최대값 불러오기 */
       setDigitSubmit.addEventListener('click',function(){
         /** string으로 나와서 number로 형변환 */
@@ -85,17 +84,14 @@
           case 1:  
             aGetRandom(1,10);
             bGetRandom(1,10);  
-            abMult(aRand,bRand);
             break;
           case 2:  
             aGetRandom(10,100);
             bGetRandom(10,100);        
-            abMult(aRand,bRand);
             break;
           case 3: 
             aGetRandom(100,1000);
             bGetRandom(100,1000);         
-            abMult(aRand,bRand);
             break;
           default:
             alert('번호를 잘못 입력하셨습니다. \n1~3자릿수 중에 골라주세요.');
@@ -105,6 +101,11 @@
         }
       });
       
+      /** 랜덤A*랜덤B 연산 값 */
+      function abMult(a,b){
+        return a*b;
+      };
+
       /** 정답입력후 정답확인버튼 클릭, 정답여부 확인 */
       guessSubmit.addEventListener('click', function(){
         /** string으로 나와서 number로 형변환 */
