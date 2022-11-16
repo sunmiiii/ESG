@@ -51,72 +51,77 @@
       */
       	
       /** TODO: 여기에 게임이 작동될 수 있도록 스크립트를 짜보세요  */
-      /** 게임시작버튼 */
-      var setDigitSubmit = document.getElementsByClassName('setDigitSubmit')[0];
-      /** 입력칸 */
-      var guessField = document.getElementById('guessField');
-      /** 정답확인버튼 */
-      var guessSubmit = document.getElementsByClassName('guessSubmit')[0];
-      /** 정답여부 확인과 현황 */
-      var resultArea = document.getElementsByClassName('resultArea')[0];
+      
+      /** 사용할 요소들 불러오기 */ 
+      var setDigitSubmit = document.getElementsByClassName('setDigitSubmit')[0]; /** 게임시작버튼 */
+      var guessField = document.getElementById('guessField'); /** 입력칸 */
+      var guessSubmit = document.getElementsByClassName('guessSubmit')[0]; /** 정답확인버튼 */ 
+      var resultArea = document.getElementsByClassName('resultArea')[0]; /** 정답여부 확인과 현황 */
+      var spanTag = document.getElementsByTagName('span')[0];
       
       var arNums = [1,2,3,4,5,6,7,8,9];
       var arRanNum = []; /** 랜덤번호 담을 변수 */
-      var chance = 9;
+      var chance = 10;
       
       function randomNumber(){
         for(var i = 0; i < 3; i++){
-          /** arNums.length를 사용한 이유는 nums에서 이미 뽑힌 숫자를 고려하기 위해 */
+          /** arNums.length를 사용한 이유는 nums에서 이미 뽑힌 숫자를 고려하기 위해 
+              splice() - 배열의 해당 위치에 배열 요소를 추가하거나 삭제
+              select는 splice를 이용해 랜덤값, 랜덤 값에서 1개의 길이만큼 배열에서 뺌
+              배열의 첫번째 값을 빼기 위해 [0]붙여줌 */
           var select = arNums.splice(Math.floor(Math.random() * arNums.length),1)[0];
-          /** select는 랜덤값, 랜덤 값에서 1개의 길이만큼 배열에서 뺌
-           배열의 첫번째 값을 빼기 위해 [0]붙여줌 */
-           arRanNum.push(select);     
+          arRanNum.push(select);     
         }
         console.log('랜덤번호 : ' + arRanNum);
-      }
+      };
 
       /** 게임시작버튼 클릭했을때 랜덤 세자리 번호 */
       setDigitSubmit.addEventListener('click', function(){
-      /** 랜덤번호 기타부호들 없애고 숫자만 */
         randomNumber();
       });
-
+      
       guessSubmit.addEventListener('click',function (){
-        /** 정확히 정답 맞췄을때 */
-        if(guessField.value===arRanNum.join('')){ 
-          resultArea.textContent = 'Home run~';
-          guessField.value = '';
+        if(guessField.length === 3){
+          /** 정확히 정답 맞췄을때 
+              join()은 array를 string으로 변환 */
+          if(guessField.value===arRanNum.join('')){ 
+            resultArea.innerHTML = '★홈런★';
+            guessField.value = '';
           /** 정답 못 맞췄을때 */
-        } else {
-          /** arRanNum과 비교할 수 있게 배열로 변환 */
-          var arGuessField= guessField.value.split('');
-          var strike = 0;
-          var ball = 0;
-          chance -= 1;
-          if(chance !== 0){
-            /** 하나씩 비교 */
-            for(var i = 0; i < 3; i++){
-              /** 자리별로 비교 */
-              if(Number(arGuessField[i])===arRanNum[i]){
-                strike += 1;
-                /** 숫자별로 비교 */
-              } else if(arRanNum.indexOf(Number(arGuessField[i])) > -1){
-                ball += 1;
-              }
-            }
-            resultArea.textContent = chance + '회 : ' + guessField.value + "   strike : " + strike + ", " + "ball : " + ball;
           } else {
-            /** 9번의 기회를 놓쳤을때 버튼 비활성화 */
-            guessSubmit.disabled = true;
-            resultArea.textContent = '실패하셨습니다';
+            /** arRanNum과 비교할 수 있게 배열로 변환
+                split()은 string을 array로 변환 */
+            var arGuessField= guessField.value.split('');
+            var strike = 0;
+            var ball = 0;
+            chance -= 1;
+            if(chance !== 0){
+              /** 하나씩 비교 */
+              for(var i = 0; i < 3; i++){
+                /** 자리별로 비교 */
+                if(Number(arGuessField[i])===arRanNum[i]){
+                  strike += 1;
+                  /** 숫자별로 비교 (indexOf - 존재하지 않는 경우 -1 반환) */
+                } else if(arRanNum.indexOf(Number(arGuessField[i])) > -1){
+                  ball += 1;
+                }
+              }
+              spanTag.innerHTML = '';
+              resultArea.innerHTML += '<br>' + chance + '회 : ' + guessField.value + "   strike : " + strike + "  ball : " + ball;
+            } else {
+              /** 9번의 기회를 놓쳤을때 버튼 비활성화 */
+              guessSubmit.disabled = true;
+              resultArea.innerHTML = '횟수 초과! 실패하셨습니다ㅠ 정답은' + arRanNum.join('') + "입니다.";
+            }
           }
+          guessField.value = '';
+          guessField.focus();
+        } else{
+          alert('숫자 3자리만 가능합니다.');
+          guessField.value = '';
+          guessField.focus();
         }
-        guessField.value = '';
-        guessField.focus();
       });
-      
-      
-      /** console.log(arRanNum.indexOf(Number(arGuessField[0]))); */
 
     </script>
   </body>

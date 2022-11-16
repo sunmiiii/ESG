@@ -48,7 +48,6 @@
       var ranGame = ['가위','바위','보'];
       var ranNum = 0;
       
-
       /** 게임시작 버튼을 누르면 랜덤 가위,바위,보 설정! */
       setPrsSubmit.addEventListener('click',function (){
         ranNum = Math.floor(Math.random()*ranGame.length);
@@ -56,19 +55,18 @@
         console.log('게임시작할때 : ' + ranGame);
       });
 
-
       /** 가위버튼 클릭시 */
       btnScissors.addEventListener('click',function(){
         /** 랜덤 가위 값일때 */
         switch (ranGame){
           case '가위':
-            resultArea.textContent = '가위일때 비겼당';
+            resultArea.innerHTML = '무승부';
             break;
           case '바위':
-            resultArea.textContent = '가위일때 졌당';
+            resultArea.innerHTML = '패';
             break;
           case '보':
-            resultArea.textContent = '가위일때 이겼당';
+            resultArea.innerHTML = '승';
             break;
           default:
             break;
@@ -80,13 +78,13 @@
         /** 랜덤 바위 값일때 */
         switch(ranGame){
           case '가위':
-            resultArea.textContent = '바위일때 이겼당';
+            resultArea.innerHTML = '승';
             break;
           case '바위':
-            resultArea.textContent = '바위일때 비겼당';
+            resultArea.innerHTML = '무승부';
             break;
           case '보':
-            resultArea.textContent = '바위일때 졌당';
+            resultArea.innerHTML = '패';
             break;
           default:
             break;
@@ -98,20 +96,18 @@
         /** 랜덤 보 값일때 */
         switch(ranGame){
           case '가위':
-            resultArea.textContent = '보일때 졌당';
+            resultArea.innerHTML = '패';
             break;
           case '바위':
-            resultArea.textContent = '보일때 이겼당';
+            resultArea.innerHTML = '승';
             break;
           case '보':
-            resultArea.textContent = '보일때 비겼당';
+            resultArea.innerHTML = '무승부';
             break;
           default:
             break;
         }
       });
-              
-              
       
     </script>
   </body>
