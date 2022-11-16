@@ -82,47 +82,40 @@
       
       /** 정답입력 후 확인 버튼 */
       guessSubmit.addEventListener('click', function(){
-        /** 3자릿수 입력했다면 */
-        if(guessField.length === 3){
-          /** 정확히 정답 맞췄을때 
-              join()은 array를 string으로 변환 */
-          if(guessField.value===arRanNum.join('')){ 
-            resultArea.innerHTML = '★홈런★';
-            guessField.value = '';
-          /** 정답 못 맞췄을때 */
-          } else {
-            /** arRanNum과 비교할 수 있게 배열로 변환
-                split()은 string을 array로 변환 */
-            var arGuessField= guessField.value.split('');
-            var strike = 0;
-            var ball = 0;
-            chance -= 1;
-            /** 기회가 있을때 */
-            if(chance !== 0){
-              for(var i = 0; i < 3; i++){
-                /** 자리별로 비교 */
-                if(Number(arGuessField[i])===arRanNum[i]){
-                  strike += 1;
-                  /** 숫자별로 비교 (indexOf - 존재하지 않는 경우 -1 반환) */
-                } else if(arRanNum.indexOf(Number(arGuessField[i])) > -1){
-                  ball += 1;
-                }
+        /** 정확히 정답 맞췄을때 
+            join()은 array를 string으로 변환 */
+        if(guessField.value===arRanNum.join('')){ 
+          resultArea.innerHTML = '★홈런★';
+          guessField.value = '';
+        /** 정답 못 맞췄을때 */
+        } else {
+          /** arRanNum과 비교할 수 있게 배열로 변환
+              split()은 string을 array로 변환 */
+          var arGuessField= guessField.value.split('');
+          var strike = 0;
+          var ball = 0;
+          chance -= 1;
+          /** 기회가 있을때 */
+          if(chance !== 0){
+            for(var i = 0; i < 3; i++){
+              /** 자리별로 비교 */
+              if(Number(arGuessField[i])===arRanNum[i]){
+                strike += 1;
+                /** 숫자별로 비교 (indexOf - 존재하지 않는 경우 -1 반환) */
+              } else if(arRanNum.indexOf(Number(arGuessField[i])) > -1){
+                ball += 1;
               }
-              spanTag.innerHTML = '';
-              resultArea.innerHTML += '<br>' + chance + '회 : ' + guessField.value + "   strike : " + strike + "  ball : " + ball;
-            /** 9번의 기회를 놓쳤을때 버튼 비활성화 */
-            } else {
-              guessSubmit.disabled = true;
-              resultArea.innerHTML = '횟수 초과! 실패하셨습니다ㅠ 정답은' + arRanNum.join('') + "입니다.";
             }
+            spanTag.innerHTML = '';
+            resultArea.innerHTML += '<br>' + chance + '회 : ' + guessField.value + "   strike : " + strike + "  ball : " + ball;
+          /** 9번의 기회를 놓쳤을때 버튼 비활성화 */
+          } else {
+            guessSubmit.disabled = true;
+            resultArea.innerHTML = '횟수 초과! 실패하셨습니다ㅠ 정답은' + arRanNum.join('') + "입니다.";
           }
-          guessField.value = '';
-          guessField.focus();
-        } else{
-          alert('숫자 3자리만 가능합니다.');
-          guessField.value = '';
-          guessField.focus();
         }
+        guessField.value = '';
+        guessField.focus(); 
       });
 
     </script>
