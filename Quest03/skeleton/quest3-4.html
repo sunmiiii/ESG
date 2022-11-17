@@ -1,123 +1,145 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
 
-    <title>숫자야구 게임</title>
+<head>
+	<meta charset="utf-8">
 
-    <style>
-      body {
-        width: 50%;
-        max-width: 800px;
-        min-width: 480px;
-        margin: 0 auto;
-      }
+	<title>숫자야구 게임</title>
 
-    </style>
-  </head>
+	<style>
+		body {
+			width: 50%;
+			max-width: 800px;
+			min-width: 480px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
 
-  <body>
-    <h1>숫자야구 게임</h1>
+<body>
+	<h1>숫자야구 게임</h1>
 
-    <li style="margin-bottom:5px;">게임시작을 누르면 랜덤값으로 세자리의 숫자가 지정됩니다.</li>
-    <li style="margin-bottom:5px;">랜덤값 세자리에 표시되는 각각의 숫자는 0이 나올 수 없으며 서로 중복값이 있어서는 안됩니다.</li>
-    <li style="margin-bottom:5px;">유저는 임의 세자리를 기록해서 맞는지 결과를 확인합니다.</li>
-    <li style="margin-bottom:5px;">회별로 기록한 숫자와 설정된숫자를 비교해서 상황을 표현해 줍니다.</li>
-    <li style="margin-bottom:5px;">야구게임이니 9회안에 맞추고 실패시 패배입니다.</li>
-    <div class="setDigitForm">
-      <input type="submit" value="게임시작" class="setDigitSubmit">
-    </div>
-	
-    <div class="form" style="margin-top:40px;">
-      <input type="text" id="guessField" class="guessField">
-      <input type="submit" value="정답확인" class="guessSubmit">
-    </div>
+	<li style="margin-bottom:5px;">게임시작을 누르면 랜덤값으로 세자리의 숫자가 지정됩니다.</li>
+	<li style="margin-bottom:5px;">랜덤값 세자리에 표시되는 각각의 숫자는 0이 나올 수 없으며 서로 중복값이 있어서는 안됩니다.</li>
+	<li style="margin-bottom:5px;">유저는 임의 세자리를 기록해서 맞는지 결과를 확인합니다.</li>
+	<li style="margin-bottom:5px;">회별로 기록한 숫자와 설정된숫자를 비교해서 상황을 표현해 줍니다.</li>
+	<li style="margin-bottom:5px;">야구게임이니 9회안에 맞추고 실패시 패배입니다.</li>
+	<div class="setDigitForm">
+		<input type="submit" value="게임시작" class="setDigitSubmit">
+	</div>
 
-    <div class="resultArea" style="margin-top:40px;">
-      <span>정답여부는 여기에!!</span>
-    </div>
+	<div class="form" style="margin-top:40px;">
+		<input type="text" id="guessField" class="guessField">
+		<input type="submit" value="정답확인" class="guessSubmit">
+	</div>
 
-    <script>
-      
-    /** 
-      # 재령씨를 위한 게임룰 #
-        
-		정답이 176 이라고 했을때
-		1. 485 - 들어맞는 숫자가 아예 없으므로 아웃. 이때부터 4, 5, 8이 후보에서 빠지므로 남는 숫자는 1, 2, 3, 6, 7, 9다  (resultArea 안에 다음과 같이 표현  1회: OUT)
-		2. 312 - 1이 있지만 위치가 다르므로 1볼. (resultArea 안에 1줄 추가  2회: 1볼)
-		3. 167 - 숫자는 전부 맞지만 위치는 1만 맞고 나머지 둘은 다르므로 1스트라이크 2볼. (resultArea 안에 1줄 추가  3회: 1S 2B)
-		4. 671 - 숫자는 전부 맞지만 위치는 다르므로 3볼. (resultArea 안에 1줄 추가  4회: 3B)
-		5. 176 - 전부 맞으므로 승리 (resultArea 안에 1줄 추가  5회: 3S 승리!)     
-      */
-      	
-      /** TODO: 여기에 게임이 작동될 수 있도록 스크립트를 짜보세요  */
-      
-      /** 사용할 요소들 불러오기 */ 
-      var setDigitSubmit = document.getElementsByClassName('setDigitSubmit')[0]; /** 게임시작버튼 */
-      var guessField = document.getElementById('guessField'); /** 입력칸 */
-      var guessSubmit = document.getElementsByClassName('guessSubmit')[0]; /** 정답확인버튼 */ 
-      var resultArea = document.getElementsByClassName('resultArea')[0]; /** 정답여부 확인과 현황 */
-      var spanTag = document.getElementsByTagName('span')[0];
-      
-      var arNums = [1,2,3,4,5,6,7,8,9];
-      var arRanNum = []; /** 랜덤번호 담을 변수 */
-      var chance = 10;
-      
-      function randomNumber(){
-        for(var i = 0; i < 3; i++){ /** 3번 반복 후 3개의 중복 없는 랜덤 값 생성 */
-          /** arNums.length를 사용한 이유는 arNums에서 splice를 사용하여 요소 삭제시 수를 반영하기 위해 
-              splice() - 배열의 해당 위치에 배열 요소를 추가하거나 삭제
-              select는 splice를 이용해 랜덤값, 랜덤 값에서 1개의 길이만큼 배열에서 뺌 */
-          var select = Math.floor(Math.random() * arNums.length);
-          arRanNum.push(arNums[select]);     
-          arNums.splice(select,1);     
-        }
-        console.log('랜덤번호 : ' + arRanNum);
-      };
+	<div class="resultArea" style="margin-top:40px;">
+		<span>정답여부는 여기에!!</span>
+	</div>
 
-      /** 게임시작버튼 클릭했을때 랜덤 세자리 번호 */
-      setDigitSubmit.addEventListener('click', function(){
-        randomNumber();
-      });
-      
-      /** 정답입력 후 확인 버튼 */
-      guessSubmit.addEventListener('click', function(){
-        /** 정확히 정답 맞췄을때 
-            join()은 array를 string으로 변환 */
-        if(guessField.value===arRanNum.join('')){ 
-          resultArea.innerHTML = '★홈런★';
-          guessField.value = '';
-        /** 정답 못 맞췄을때 */
-        } else {
-          /** arRanNum과 비교할 수 있게 배열로 변환
-              split()은 string을 array로 변환 */
-          var arGuessField= guessField.value.split('');
-          var strike = 0;
-          var ball = 0;
-          chance -= 1;
-          /** 기회가 있을때 */
-          if(chance !== 0){
-            for(var i = 0; i < 3; i++){
-              /** 자리별로 비교 */
-              if(Number(arGuessField[i])===arRanNum[i]){
-                strike += 1;
-                /** 숫자별로 비교 (indexOf - 존재하지 않는 경우 -1 반환) */
-              } else if(arRanNum.indexOf(Number(arGuessField[i])) > -1){
-                ball += 1;
-              }
-            }
-            spanTag.innerHTML = '';
-            resultArea.innerHTML += '<br>' + chance + '회 : ' + guessField.value + "   strike : " + strike + "  ball : " + ball;
-          /** 9번의 기회를 놓쳤을때 버튼 비활성화 */
-          } else {
-            guessSubmit.disabled = true;
-            resultArea.innerHTML = '횟수 초과! 실패하셨습니다ㅠ 정답은' + arRanNum.join('') + "입니다.";
-          }
-        }
-        guessField.value = '';
-        guessField.focus(); 
-      });
+	<script>
 
-    </script>
-  </body>
+		/** 
+		  # 재령씨를 위한 게임룰 #
+		    
+			정답이 176 이라고 했을때
+			1. 485 - 들어맞는 숫자가 아예 없으므로 아웃. 이때부터 4, 5, 8이 후보에서 빠지므로 남는 숫자는 1, 2, 3, 6, 7, 9다  (resultArea 안에 다음과 같이 표현  1회: OUT)
+			2. 312 - 1이 있지만 위치가 다르므로 1볼. (resultArea 안에 1줄 추가  2회: 1볼)
+			3. 167 - 숫자는 전부 맞지만 위치는 1만 맞고 나머지 둘은 다르므로 1스트라이크 2볼. (resultArea 안에 1줄 추가  3회: 1S 2B)
+			4. 671 - 숫자는 전부 맞지만 위치는 다르므로 3볼. (resultArea 안에 1줄 추가  4회: 3B)
+			5. 176 - 전부 맞으므로 승리 (resultArea 안에 1줄 추가  5회: 3S 승리!)     
+		  */
+
+		/** TODO: 여기에 게임이 작동될 수 있도록 스크립트를 짜보세요  */
+
+		/** 사용할 요소들 불러오기 */
+		var setDigitSubmit = document.getElementsByClassName('setDigitSubmit')[0]; /** 게임시작버튼 */
+		var guessField = document.getElementById('guessField'); /** 입력칸 */
+		var guessSubmit = document.getElementsByClassName('guessSubmit')[0]; /** 정답확인버튼 */
+		var resultArea = document.getElementsByClassName('resultArea')[0]; /** 정답여부 확인과 현황 */
+		var spanTag = document.getElementsByTagName('span')[0];
+
+		var arNums = []; /** 랜덤번호 만들기 위해 추출할 변수 */
+		var arRanNum = []; /** 랜덤번호 담을 변수 */
+		var chance = 9; /** 기회수! */
+		var num = 0; /** 몇회인지! */
+
+		function randomNumber() {
+			arNums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+			arRanNum = []; 
+			for (var i = 0; i < 3; i++) { /** 3번 반복 후 3개의 중복 없는 랜덤 값 생성 */
+				/** arNums.length를 사용한 이유는 arNums에서 splice를 사용하여 요소 삭제시 수를 반영하기 위해 
+					splice() - 배열의 해당 위치에 배열 요소를 추가하거나 삭제
+					select는 splice를 이용해 랜덤값, 랜덤 값에서 1개의 길이만큼 배열에서 뺌 */
+				var select = Math.floor(Math.random() * arNums.length);
+				arRanNum.push(arNums[select]);
+				arNums.splice(select, 1);
+			}
+			console.log('랜덤번호 : ' + arRanNum);
+		};
+
+		/** 정답확인버튼클릭시 기존입력내용과 포커스 맞추기*/
+		function setting() {
+			guessField.value = '';
+			guessField.focus();
+		};
+
+		/** 게임시작버튼 클릭했을때 랜덤 세자리 번호 */
+		setDigitSubmit.addEventListener('click', function () {
+			resultArea.innerHTML = '';
+			guessSubmit.disabled = false;
+			setting();
+			randomNumber();
+		});
+
+		/** 정답입력 후 확인 버튼 */
+		guessSubmit.addEventListener('click', function () {
+			/** 정확히 정답 맞췄을때 
+				join()은 array를 string으로 변환 */
+				if (guessField.value === arRanNum.join('')) {
+				resultArea.innerHTML = '★홈런★';
+				setting();
+				return;
+			}
+			/** 9번의 기회를 놓쳤을때 버튼 비활성화 */
+			if(chance === 0) {
+				guessSubmit.disabled = true;
+				resultArea.innerHTML = '횟수 초과! 실패하셨습니다ㅠ 정답은 ' + arRanNum.join('') + "입니다.";
+				setting();
+				return;
+			}
+			/** 정답 못 맞췄을때 */
+			if (chance !== 0) {
+				/** arRanNum과 비교할 수 있게 배열로 변환
+					split()은 string을 array로 변환 */
+				var arGuessField = guessField.value.split('');
+				var strike = 0;
+				var ball = 0;
+				chance -= 1;
+				num += 1;
+				/** 기회가 있을때 */
+				for (var i = 0; i < 3; i++) {
+					/** 자리별로 비교 */
+					if (Number(arGuessField[i]) === arRanNum[i]) {
+						strike += 1;
+					/** 숫자별로 비교 (indexOf - 존재하지 않는 경우 -1 반환) */
+					}
+					if (arRanNum.indexOf(Number(arGuessField[i])) > -1) {
+						ball += 1;
+					}
+				}
+				if (strike === 0 && ball ===0){
+					spanTag.innerHTML = '';
+					resultArea.innerHTML += '<br>' + num + '회 : ' + guessField.value + ' out!!!' 
+				} else {
+					spanTag.innerHTML = '';
+					resultArea.innerHTML += '<br>' + num + '회 : ' + guessField.value + "   strike : " + strike + "  ball : " + ball;
+				}
+				setting();
+			}
+		});
+
+	</script>
+</body>
+
 </html>
