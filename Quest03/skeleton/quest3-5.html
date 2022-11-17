@@ -1,115 +1,111 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
 
-    <title>가위바위보 게임</title>
+<head>
+	<meta charset="utf-8">
 
-    <style>
-      body {
-        width: 50%;
-        max-width: 800px;
-        min-width: 480px;
-        margin: 0 auto;
-      }
+	<title>가위바위보 게임</title>
 
-    </style>
-  </head>
+	<style>
+		body {
+			width: 50%;
+			max-width: 800px;
+			min-width: 480px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
 
-  <body>
-    <h1>가위바위보 게임</h1>
+<body>
+	<h1>가위바위보 게임</h1>
 
-    <li style="margin-bottom:5px;">게임시작을 누르면 랜덤값으로 가위,바위,보중 하나가 지정됩니다.</li>
-    <li style="margin-bottom:15px;">유저도 가위,바위,보중에 하나를 선택하고 결과를 확인합니다.</li>
-    <div class="setDigitForm">
-      <input type="button" value="게임시작" class="setPrsSubmit" style="width:310px;">
-    </div>
-	
-    <div class="form" style="margin-top:40px;">
-      <input type="button" id="btnScissors" value="가위" class="btnScissors" style="width:100px;">
-      <input type="button" id="btnRock" value="바위" class="btnRock" style="width:100px;">
-      <input type="button" id="btnPaper" value="보" class="btnPaper" style="width:100px;">
-    </div>
+	<li style="margin-bottom:5px;">게임시작을 누르면 랜덤값으로 가위,바위,보중 하나가 지정됩니다.</li>
+	<li style="margin-bottom:15px;">유저도 가위,바위,보중에 하나를 선택하고 결과를 확인합니다.</li>
+	<div class="setDigitForm">
+		<input type="button" value="게임시작" class="setPrsSubmit" style="width:310px;">
+	</div>
 
-    <div class="resultArea" style="margin-top:40px;">
-      <span>승패여부는 여기에!!</span>
-    </div>
+	<div class="form" style="margin-top:40px;">
+		<input type="button" id="btnScissors" value="가위" class="btnScissors" style="width:100px;">
+		<input type="button" id="btnRock" value="바위" class="btnRock" style="width:100px;">
+		<input type="button" id="btnPaper" value="보" class="btnPaper" style="width:100px;">
+	</div>
 
-    <script>
-      /** TODO: 여기에 게임이 작동될 수 있도록 스크립트를 짜보세요  */
+	<div class="resultArea" style="margin-top:40px;">
+		<span>승패여부는 여기에!!</span>
+	</div>
 
-      /** 사용할 요소 가져오기 */
-      var setPrsSubmit = document.getElementsByClassName('setPrsSubmit')[0];
-      var btnScissors = document.getElementById('btnScissors');
-      var btnRock = document.getElementById('btnRock');
-      var btnPaper = document.getElementById('btnPaper');
-      var resultArea = document.getElementsByClassName('resultArea')[0];
+	<script>
+		/** TODO: 여기에 게임이 작동될 수 있도록 스크립트를 짜보세요  */
 
-      /** 게임에 필요한 변수 선언 */
-      var ranGame = ['가위','바위','보'];
-      var ranNum = 0;
-      
-      /** 게임시작 버튼을 누르면 랜덤 가위,바위,보 설정! */
-      setPrsSubmit.addEventListener('click',function (){
-        ranNum = Math.floor(Math.random()*ranGame.length);
-        ranGame = ranGame[ranNum];
-        console.log('게임시작할때 : ' + ranGame);
-      });
+		/** 사용할 요소 가져오기 */
+		var setPrsSubmit = document.getElementsByClassName('setPrsSubmit')[0];
+		var btnScissors = document.getElementById('btnScissors');
+		var btnRock = document.getElementById('btnRock');
+		var btnPaper = document.getElementById('btnPaper');
+		var resultArea = document.getElementsByClassName('resultArea')[0];
 
-      /** 가위버튼 클릭시 */
-      btnScissors.addEventListener('click',function(){
-        /** 랜덤 가위 값일때 */
-        switch (ranGame){
-          case '가위':
-            resultArea.innerHTML = '무승부';
-            break;
-          case '바위':
-            resultArea.innerHTML = '패';
-            break;
-          case '보':
-            resultArea.innerHTML = '승';
-            break;
-          default:
-            break;
-        }
-      });
-        
-      /** 바위버튼 클릭시 */
-      btnRock.addEventListener('click',function(){
-        /** 랜덤 바위 값일때 */
-        switch(ranGame){
-          case '가위':
-            resultArea.innerHTML = '승';
-            break;
-          case '바위':
-            resultArea.innerHTML = '무승부';
-            break;
-          case '보':
-            resultArea.innerHTML = '패';
-            break;
-          default:
-            break;
-        }
-      });
-        
-      /** 보버튼 클릭시 */
-      btnPaper.addEventListener('click',function(){
-        /** 랜덤 보 값일때 */
-        switch(ranGame){
-          case '가위':
-            resultArea.innerHTML = '패';
-            break;
-          case '바위':
-            resultArea.innerHTML = '승';
-            break;
-          case '보':
-            resultArea.innerHTML = '무승부';
-            break;
-          default:
-            break;
-        }
-      });
-      
-    </script>
-  </body>
+		/** 게임에 필요한 변수 선언 */
+		var ranGame = [];
+
+		/** 게임시작 버튼을 누르면 랜덤 가위,바위,보 설정! */
+		setPrsSubmit.addEventListener('click', function () {
+			var ranNum = 0;
+			ranGame = ['가위', '바위', '보'];
+			ranNum = Math.floor(Math.random() * ranGame.length);
+			ranGame = ranGame[ranNum];
+			console.log('게임시작할때 : ' + ranGame);
+		});
+
+		/** 가위버튼 클릭시 */
+		btnScissors.addEventListener('click', function () {
+			/** 랜덤 가위 값일때 */
+			switch (ranGame) {
+				case '가위':
+					resultArea.innerHTML = '무승부';
+					break;
+				case '바위':
+					resultArea.innerHTML = '패';
+					break;
+				case '보':
+					resultArea.innerHTML = '승';
+					break;
+			}
+		});
+
+		/** 바위버튼 클릭시 */
+		btnRock.addEventListener('click', function () {
+			/** 랜덤 바위 값일때 */
+			switch (ranGame) {
+				case '가위':
+					resultArea.innerHTML = '승';
+					break;
+				case '바위':
+					resultArea.innerHTML = '무승부';
+					break;
+				case '보':
+					resultArea.innerHTML = '패';
+					break;
+			}
+		});
+
+		/** 보버튼 클릭시 */
+		btnPaper.addEventListener('click', function () {
+			/** 랜덤 보 값일때 */
+			switch (ranGame) {
+				case '가위':
+					resultArea.innerHTML = '패';
+					break;
+				case '바위':
+					resultArea.innerHTML = '승';
+					break;
+				case '보':
+					resultArea.innerHTML = '무승부';
+					break;
+			}
+		});
+
+	</script>
+</body>
+
 </html>
