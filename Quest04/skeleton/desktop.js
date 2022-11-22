@@ -15,39 +15,72 @@ let body = document.querySelector('body');
 let desktop = document.querySelector('.desktop');
 let iconFile = ['./icon/folderImg.png', './icon/iconImg.png'];
 let imgs = [];
+let imgDiv = document.createElement('div');
+let divDiv = document.createElement('div');
+let modelDiv = document.createElement('div');
+let pTagModal = document.createElement('p');
+let modalBtn = document.createElement('button');
+let aa = document.createElement('a');
+/** 데스크탑에 div태그 두개 만든거 넣어줌! */
+desktop.append(imgDiv,modelDiv,divDiv);
 
 class Desktop {
+	/** 모달 div안에 사용할 p태그, 버튼태그 넣어줌! */
+	constructor(){
 
+	};
+	imgClickModel(){
+		modelDiv.setAttribute('class','modal_wrap');
+		divDiv.setAttribute('class','black_bg');
+		modelDiv.append(pTagModal,modalBtn);
+		pTagModal.textContent = '모달창입니돠';
+		modalBtn.textContent = '버튼클릭시 모달 벗어남!'
+	};
 };
 
-
-2
 class Icon {
 	constructor(number, srcNum) {
 		this.number = number;
 		this.srcNum = srcNum;
-		this.selectNum();
+		this.selectIconNum();
 	};
-
-	selectNum() {
+	/** 아이콘 이미지 불러오기! */
+	selectIconNum() {
 		for (var i = 0; i < this.number; i++) {
 			imgs[i] = new Image(); // 이미지객체생성
 			imgs[i].src = iconFile[this.srcNum]; // 페이지 로딩 될때 이미지 미리 로딩
-			desktop.appendChild(imgs[i]);
+			imgDiv.appendChild(imgs[i]);
+		}
+		console.log(imgs);
+	};
+};
+ 
+class Folder {
+	constructor(number, srcNum) {
+		this.number = number;
+		this.srcNum = srcNum;
+		this.selectFolderNum();
+	};
+	/** 폴더 이미지 불러오기! */
+	selectFolderNum() {
+		for (var i = 0; i < this.number; i++) {
+			imgs[i] = new Image(); // 이미지객체생성
+			imgs[i].src = iconFile[this.srcNum]; // 페이지 로딩 될때 이미지 미리 로딩
+			imgDiv.appendChild(imgs[i]);
 		}
 		console.log(imgs);
 	};
 };
 
-class Folder {
-	/** 폴더 아이콘을 클릭했을 때 모달창 생성 */
-
-
-};
 
 class Window {
 	/* TODO: Window 클래스는 어떤 멤버함수와 멤버변수를 가져야 할까요? */
 };
+
+
+/** 드래그 해보자! */
+let dragging = false;
+
 
 
 /** dom 요소 가져오기*/
@@ -82,28 +115,4 @@ class Window {
 // selectNum(iconNum, 1);
 
 /** ******************폴더이미지 아이콘이미지 생성*********************** */
-
-/** 드래그 해보자! */
-let dragging = false;
-
-
-let pTagModal = document.createElement('p');
-pTag.textContent = "행복한 자바스크립트^^";
-
-let modalBtn = document.createElement('button');
-modalBtn.value = '창 닫기';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
