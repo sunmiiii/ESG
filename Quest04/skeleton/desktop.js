@@ -14,6 +14,7 @@
 let body = document.querySelector('body');
 let desktop = document.querySelector('.desktop');
 let iconFile = ['./icon/folderImg.png', './icon/iconImg.png'];
+let iconName = ['folderImg', 'iconImg'];
 let imgs = [];
 let imgDiv = document.createElement('div');
 imgDiv.setAttribute('class', 'imgDiv');
@@ -25,7 +26,8 @@ let modalBtn = document.createElement('button');
 */
 
 /** 데스크탑에 div태그 두개 만든거 넣어줌! */
-desktop.append(imgDiv, modelDiv);
+desktop.append(imgDiv);
+/** desktop.append(imgDiv, modelDiv); 모달이 있었다면 */
 
 /** 
 modelDiv.setAttribute('class', 'modal');
