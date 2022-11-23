@@ -44,7 +44,8 @@ class Icon {
     };      
 };
 
-function temp(){
+
+function modalCreate(){
 let bigDiv = document.createElement('div');
 bigDiv.setAttribute('class', 'modal');
 desktop.appendChild(bigDiv);
@@ -68,7 +69,7 @@ imgs.forEach(function (e) {
         e.addEventListener('click', displayModal);
         // console.log('이미지 배열에서 작동중!');
 });
-
+/** 상위 div 자식들 삭제*/
 function removeClose(){
     bigDiv.parentNode.removeChild(bigDiv);
 };
@@ -77,7 +78,7 @@ closeBtn.addEventListener('click', displayModal);
 closeBtn.addEventListener('click', removeClose);
 };
 
-imgs.forEach(temp);
+imgs.modalCreate(temp);
 
 
 class Window {
