@@ -17,13 +17,17 @@ let iconFile = ['./icon/folderImg.png', './icon/iconImg.png'];
 let imgs = [];
 let imgDiv = document.createElement('div');
 imgDiv.setAttribute('class', 'imgDiv');
+/** 
 let modelDiv = document.createElement('div');
 let modelContent = document.createElement('div');
 let pTagModal = document.createElement('p');
 let modalBtn = document.createElement('button');
+*/
+
 /** 데스크탑에 div태그 두개 만든거 넣어줌! */
 desktop.append(imgDiv, modelDiv);
 
+/** 
 modelDiv.setAttribute('class', 'modal');
 modelDiv.append(modelContent, pTagModal, modalBtn);
 modelContent.setAttribute('class', 'modal_content');
@@ -40,19 +44,10 @@ imgs.forEach(function (e) {
 });
 
 modalBtn.addEventListener('click', displayModal);
-
-
+*/
 
 class Desktop {
 	/** 모달 div안에 사용할 p태그, 버튼태그 넣어줌! */
-	constructor() {
-
-	};
-	imgClickModel() {
-
-	};
-
-
 };
 
 class Icon {

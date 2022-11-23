@@ -11,14 +11,16 @@ img {
     cursor: move;
 }
 
-button {
-    all: unset; /** 기본스타일 초기화*/
+
+/* button {
+    all: unset; 
     background-color: mediumslateblue;
     color: white;
     padding: 5px 25px;
     border-radius: 10px;
     cursor: pointer;
 }
+
 
 .modal {
     display: flex;
@@ -55,4 +57,4 @@ p {
 
 .hidden {
     display: none;
-}
+} */
