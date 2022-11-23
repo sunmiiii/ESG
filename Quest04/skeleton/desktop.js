@@ -13,116 +13,70 @@
 
 let body = document.querySelector('body');
 let desktop = document.querySelector('.desktop');
+
+/** 이미지를 가져오기 위해 필요한 것들 */
 let iconFile = ['./icon/folderImg.png', './icon/iconImg.png'];
 let iconName = ['folderImg', 'iconImg'];
 let imgs = [];
 let imgDiv = document.createElement('div');
 imgDiv.setAttribute('class', 'imgDiv');
-/** 
-let modelDiv = document.createElement('div');
-let modelContent = document.createElement('div');
-let pTagModal = document.createElement('p');
-let modalBtn = document.createElement('button');
-*/
 
-/** 데스크탑에 div태그 두개 만든거 넣어줌! */
 desktop.append(imgDiv);
-/** desktop.append(imgDiv, modelDiv); 모달이 있었다면 */
-
-/** 
-modelDiv.setAttribute('class', 'modal');
-modelDiv.append(modelContent, pTagModal, modalBtn);
-modelContent.setAttribute('class', 'modal_content');
-modelContent.append(pTagModal, modalBtn);
-pTagModal.textContent = '모달창입니돠';
-modalBtn.textContent = '버튼클릭시 모달 벗어남!';
-
-function displayModal() {
-	modelDiv.classList.toggle('hidden');
-};
-
-imgs.forEach(function (e) {
-	e.addEventListener('click', displayModal);
-});
-
-modalBtn.addEventListener('click', displayModal);
-*/
-class Desktop {
-	/** 모달 div안에 사용할 p태그, 버튼태그 넣어줌! */
-};
 
 class Icon {
-	constructor(number, srcNum) {
+	constructor(number, srcNum, iconNum) {
 		this.number = number;
 		this.srcNum = srcNum;
-		this.selectIconNum();
+        this.iconNum = iconNum;
+		this.selectIconNum();       
 	};
 	/** 아이콘 이미지 불러오기! */
 	selectIconNum() {
 		for (let i = 0; i < this.number; i++) {
-			imgs[i] = new Image(); // 이미지객체생성
+            imgs[i] = document.createElement('img');
 			imgs[i].src = iconFile[this.srcNum]; // 페이지 로딩 될때 이미지 미리 로딩
-			imgs[i].setAttribute('class', 'iconImg');
+			imgs[i].setAttribute('class', iconName[this.iconNum]);
 			imgDiv.appendChild(imgs[i]);
 		}
-		
-	};
+        imgs.forEach(function(e){
+            e.addEventListener('click',temp);
+        })
+    };      
 };
 
-class Folder {
-	constructor(number, srcNum) {
-		this.number = number;
-		this.srcNum = srcNum;
-		this.selectFolderNum();
-	};
-	/** 폴더 이미지 불러오기! */
-	selectFolderNum() {
-		for (let i = 0; i < this.number; i++) {
-			imgs[i] = new Image(); // 이미지객체생성
-			imgs[i].src = iconFile[this.srcNum]; // 페이지 로딩 될때 이미지 미리 로딩
-			imgs[i].setAttribute('class', 'folderImg');
-			imgDiv.appendChild(imgs[i]);
-		}
-		console.log(imgs);
-	};
+function temp(){
+let bigDiv = document.createElement('div');
+bigDiv.setAttribute('class', 'modal');
+desktop.appendChild(bigDiv);
+let modalContentDiv = document.createElement('div');
+modalContentDiv.setAttribute('class','modelContent');
+bigDiv.append(modalContentDiv);
+let divHea = document.createElement('div');
+divHea.setAttribute('class','divHea');
+divHea.textContent = '머리';
+let pCon = document.createElement('p');
+let closeBtn = document.createElement('button');
+pCon.textContent = '나는 모달!';
+closeBtn.textContent = '닫기';
+modalContentDiv.append(divHea, pCon,closeBtn);
+
+function displayModal() {
+    bigDiv.classList.toggle('hidden');
+    // console.log('토글토글');
+}
+imgs.forEach(function (e) {
+        e.addEventListener('click', displayModal);
+        // console.log('이미지 배열에서 작동중!');
+});
+
+closeBtn.addEventListener('click', displayModal);
+
 };
+
+imgs.forEach(temp);
 
 
 class Window {
 	/* TODO: Window 클래스는 어떤 멤버함수와 멤버변수를 가져야 할까요? */
 };
-
-
-/** dom 요소 가져오기*/
-
-// var folderIconImg = document.createElement('img');
-// folderIconImg.setAttribute('class','folderIconImg');
-// folderIconImg.setAttribute('src','./icon/folderImg.png');
-// desktop.appendChild(folderIconImg);
-
-// var iconImg = document.createElement('img');
-// iconImg.setAttribute('class','iconImg');
-// iconImg.setAttribute('src','./icon/iconImg.png');
-// desktop.appendChild(iconImg);
-
-
-/** ******************폴더이미지 아이콘이미지 생성*********************** */
-
-// var folderNum = Number(prompt('몇개의 폴더를 받아올래용?', 1));
-// var iconNum = Number(prompt('몇개의 아이콘을 받아올래용?', 1));
-
-// /** 반복할 횟수를 매개변수 number에, 이미지 경로 배열에서 지정번호 가져옴 srcNum*/
-// function selectNum(number,srcNum){
-// 	for(var i = 0; i < number; i++){
-// 		imgs[i] = new Image(); // 이미지객체생성
-// 		imgs[i].src = iconFile[srcNum]; // 페이지 로딩 될때 이미지 미리 로딩
-// 		desktop.appendChild(imgs[i]);
-// 	}
-// };
-
-// /** 함수 사용해서 반복회수, 지정경로 정해줌 */
-// selectNum(folderNum, 0);
-// selectNum(iconNum, 1);
-
-/** ******************폴더이미지 아이콘이미지 생성*********************** */
 
