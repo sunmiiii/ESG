@@ -7,22 +7,21 @@ body {
 }
 
 img {
-    margin-top: 20px;
-    height: 150px;
+    margin: 20px 20px;
+    height: 100px;
     cursor: move;
 }
 
 
-/* button {
+ button {
     all: unset; 
     background-color: mediumslateblue;
     color: white;
     padding: 5px 25px;
     border-radius: 10px;
     cursor: pointer;
+    margin-top: 70%;
 }
-
-
 .modal {
     display: flex;
     justify-content: center;
@@ -34,28 +33,35 @@ img {
     height: 100%;
 }
 
-.modal__background {
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-
-.modal__content {
+.modelContent {
     text-align: center;
     position: relative;
     background-color: white;
     border-radius: 10px;
     top: 0;
-    padding: 10px 25px;
+    /* padding: 10px 25px; */
     width: 20%;
+    height: 35%;
+}
+/* .modalBg {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+} */
+
+.divHea{
+    background-color: rgb(148, 130, 247);
+    padding:10px 10px;
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+    color: white;
+    font-weight: bold;
 }
 
 p {
-    margin: 0;
-    margin-bottom: 13px;
+    margin: 10px;
 }
-
 .hidden {
     display: none;
-} */
+} 
