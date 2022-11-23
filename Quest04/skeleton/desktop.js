@@ -16,26 +16,43 @@ let desktop = document.querySelector('.desktop');
 let iconFile = ['./icon/folderImg.png', './icon/iconImg.png'];
 let imgs = [];
 let imgDiv = document.createElement('div');
-let divDiv = document.createElement('div');
+imgDiv.setAttribute('class', 'imgDiv');
 let modelDiv = document.createElement('div');
+let modelContent = document.createElement('div');
 let pTagModal = document.createElement('p');
 let modalBtn = document.createElement('button');
-let aa = document.createElement('a');
 /** 데스크탑에 div태그 두개 만든거 넣어줌! */
-desktop.append(imgDiv,modelDiv,divDiv);
+desktop.append(imgDiv, modelDiv);
+
+modelDiv.setAttribute('class', 'modal');
+modelDiv.append(modelContent, pTagModal, modalBtn);
+modelContent.setAttribute('class', 'modal_content');
+modelContent.append(pTagModal, modalBtn);
+pTagModal.textContent = '모달창입니돠';
+modalBtn.textContent = '버튼클릭시 모달 벗어남!';
+
+function displayModal() {
+	modelDiv.classList.toggle('hidden');
+};
+
+imgs.forEach(function (e) {
+	e.addEventListener('click', displayModal);
+});
+
+modalBtn.addEventListener('click', displayModal);
+
+
 
 class Desktop {
 	/** 모달 div안에 사용할 p태그, 버튼태그 넣어줌! */
-	constructor(){
+	constructor() {
 
 	};
-	imgClickModel(){
-		modelDiv.setAttribute('class','modal_wrap');
-		divDiv.setAttribute('class','black_bg');
-		modelDiv.append(pTagModal,modalBtn);
-		pTagModal.textContent = '모달창입니돠';
-		modalBtn.textContent = '버튼클릭시 모달 벗어남!'
+	imgClickModel() {
+
 	};
+
+
 };
 
 class Icon {
@@ -46,15 +63,16 @@ class Icon {
 	};
 	/** 아이콘 이미지 불러오기! */
 	selectIconNum() {
-		for (var i = 0; i < this.number; i++) {
+		for (let i = 0; i < this.number; i++) {
 			imgs[i] = new Image(); // 이미지객체생성
 			imgs[i].src = iconFile[this.srcNum]; // 페이지 로딩 될때 이미지 미리 로딩
+			imgs[i].setAttribute('class', 'iconImg');
 			imgDiv.appendChild(imgs[i]);
 		}
 		console.log(imgs);
 	};
 };
- 
+
 class Folder {
 	constructor(number, srcNum) {
 		this.number = number;
@@ -63,9 +81,10 @@ class Folder {
 	};
 	/** 폴더 이미지 불러오기! */
 	selectFolderNum() {
-		for (var i = 0; i < this.number; i++) {
+		for (let i = 0; i < this.number; i++) {
 			imgs[i] = new Image(); // 이미지객체생성
 			imgs[i].src = iconFile[this.srcNum]; // 페이지 로딩 될때 이미지 미리 로딩
+			imgs[i].setAttribute('class', 'folderImg');
 			imgDiv.appendChild(imgs[i]);
 		}
 		console.log(imgs);
@@ -76,11 +95,6 @@ class Folder {
 class Window {
 	/* TODO: Window 클래스는 어떤 멤버함수와 멤버변수를 가져야 할까요? */
 };
-
-
-/** 드래그 해보자! */
-let dragging = false;
-
 
 
 /** dom 요소 가져오기*/
