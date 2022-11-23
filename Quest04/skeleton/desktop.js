@@ -63,14 +63,18 @@ modalContentDiv.append(divHea, pCon,closeBtn);
 function displayModal() {
     bigDiv.classList.toggle('hidden');
     // console.log('토글토글');
-}
+};
 imgs.forEach(function (e) {
         e.addEventListener('click', displayModal);
         // console.log('이미지 배열에서 작동중!');
 });
 
-closeBtn.addEventListener('click', displayModal);
+function removeClose(){
+    bigDiv.parentNode.removeChild(bigDiv);
+};
 
+closeBtn.addEventListener('click', displayModal);
+closeBtn.addEventListener('click', removeClose);
 };
 
 imgs.forEach(temp);
