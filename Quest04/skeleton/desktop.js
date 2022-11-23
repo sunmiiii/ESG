@@ -24,26 +24,24 @@ imgDiv.setAttribute('class', 'imgDiv');
 desktop.append(imgDiv);
 
 class Icon {
-	constructor(number, srcNum, iconNum) {
+	constructor(number, selectNum) {
 		this.number = number;
-		this.srcNum = srcNum;
-        this.iconNum = iconNum;
+		this.selectNum = selectNum;
 		this.selectIconNum();       
 	};
 	/** 아이콘 이미지 불러오기! */
 	selectIconNum() {
 		for (let i = 0; i < this.number; i++) {
             imgs[i] = document.createElement('img');
-			imgs[i].src = iconFile[this.srcNum]; // 페이지 로딩 될때 이미지 미리 로딩
-			imgs[i].setAttribute('class', iconName[this.iconNum]);
+			imgs[i].src = iconFile[this.selectNum]; // 페이지 로딩 될때 이미지 미리 로딩
+			imgs[i].setAttribute('class', iconName[this.selectNum]);
 			imgDiv.appendChild(imgs[i]);
 		}
         imgs.forEach(function(e){
-            e.addEventListener('click',temp);
-        })
+            e.addEventListener('click', modalCreate);
+        });
     };      
 };
-
 
 function modalCreate(){
 let bigDiv = document.createElement('div');
@@ -66,10 +64,12 @@ function displayModal() {
     // console.log('토글토글');
 };
 imgs.forEach(function (e) {
+        console.log(e.className)
         e.addEventListener('click', displayModal);
+        
         // console.log('이미지 배열에서 작동중!');
 });
-/** 상위 div 자식들 삭제*/
+
 function removeClose(){
     bigDiv.parentNode.removeChild(bigDiv);
 };
@@ -78,7 +78,6 @@ closeBtn.addEventListener('click', displayModal);
 closeBtn.addEventListener('click', removeClose);
 };
 
-imgs.modalCreate(temp);
 
 
 class Window {
