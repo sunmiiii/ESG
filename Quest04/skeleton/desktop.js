@@ -47,7 +47,6 @@ imgs.forEach(function (e) {
 
 modalBtn.addEventListener('click', displayModal);
 */
-
 class Desktop {
 	/** 모달 div안에 사용할 p태그, 버튼태그 넣어줌! */
 };
@@ -66,7 +65,7 @@ class Icon {
 			imgs[i].setAttribute('class', 'iconImg');
 			imgDiv.appendChild(imgs[i]);
 		}
-		console.log(imgs);
+		
 	};
 };
 
