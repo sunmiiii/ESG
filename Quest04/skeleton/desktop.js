@@ -11,71 +11,109 @@
  Drag & Drop API를 사용하지 말고, 실제 마우스 이벤트(mouseover, mousedown, mouseout 등)를 사용하여 구현해 보세요!
  */
 
+let starImg;
+let folderImg;
+let parDiv;
+let modalContentDiv;
+let divHea;
+let pCon;
+let closeBtn;
+let count = 0;
+
 let body = document.querySelector('body');
 let desktop = document.querySelector('.desktop');
 
 /** 이미지를 가져오기 위해 필요한 것들 */
-let iconFile = ['./icon/folderImg.png', './icon/iconImg.png'];
-let iconName = ['folderImg', 'iconImg'];
-let imgs = [];
 let imgDiv = document.createElement('div');
 imgDiv.setAttribute('class', 'imgDiv');
 
 desktop.append(imgDiv);
-
-class Icon {
-	constructor(number, selectNum) {
+class folder {
+	constructor(number) {
 		this.number = number;
-		this.selectNum = selectNum;
-		this.selectIconNum();       
+		this.folderIcon();
 	};
 	/** 아이콘 이미지 불러오기! */
-	selectIconNum() {
+	
+	folderIcon() {
 		for (let i = 0; i < this.number; i++) {
-            imgs[i] = document.createElement('img');
-			imgs[i].src = iconFile[this.selectNum]; // 페이지 로딩 될때 이미지 미리 로딩
-			imgs[i].setAttribute('class', iconName[this.selectNum]);
-			imgDiv.appendChild(imgs[i]);
+			folderImg = document.createElement('img');
+			folderImg.setAttribute('src','./icon/folderImg.png'); // 페이지 로딩 될때 이미지 미리 로딩
+			folderImg.setAttribute('class', 'folderImg' + i);
+			imgDiv.append(folderImg);
+			modalCreate();
+			console.log(i+'번째 생성중');
+			folderImg.addEventListener('click',function(){
+				parDiv.classList.remove('hidden');
+			});
 		}
-        imgs.forEach(function(e){
-            e.addEventListener('click', modalCreate);
-        });
-    };      
+	};
+		// let num = 0;
+		// imgs.forEach(function (e) {
+		// 	if (e.className === ('folderImg'+num)) {
+		// 		e.addEventListener('click', function(){
+		// 			e.className.remove('hidden');
+		// 		});
+		// 		num++;
+		// 	}
+		// });
+	
 };
 
-function modalCreate(){
-let bigDiv = document.createElement('div');
-bigDiv.setAttribute('class', 'modal');
-desktop.appendChild(bigDiv);
-let modalContentDiv = document.createElement('div');
-modalContentDiv.setAttribute('class','modelContent');
-bigDiv.append(modalContentDiv);
-let divHea = document.createElement('div');
-divHea.setAttribute('class','divHea');
-divHea.textContent = '머리';
-let pCon = document.createElement('p');
-let closeBtn = document.createElement('button');
-pCon.textContent = '나는 모달!';
-closeBtn.textContent = '닫기';
-modalContentDiv.append(divHea, pCon,closeBtn);
 
-function displayModal() {
-    bigDiv.classList.toggle('hidden');
-    // console.log('토글토글');
-};
-imgs.forEach(function (e) {
-        console.log(e.className)
-        e.addEventListener('click', displayModal);
-        
-        // console.log('이미지 배열에서 작동중!');
-});
+class Icon {
+	constructor(num){
+		this.num = num;
+		this.starIcon();
+	}
+	starIcon() {
+		for (let i = 0; i < this.num; i++) {
+			starImg = document.createElement('img');
+			starImg.setAttribute('src','./icon/iconImg.png'); // 페이지 로딩 될때 이미지 미리 로딩
+			starImg.setAttribute('class', 'iconImg' + i);
+			imgDiv.append(starImg);
+			console.log(i+'번째 생성중');
+		}
+	};
+	
 
-function removeClose(){
-    bigDiv.parentNode.removeChild(bigDiv);
 };
 
-closeBtn.addEventListener('click', displayModal);
-closeBtn.addEventListener('click', removeClose);
+function modalCreate() {
+	parDiv = document.createElement('div');
+	parDiv.setAttribute('class', 'modal' + count);
+	parDiv.classList.add('folderImg' + count); // 이미지 생성시 클래스 이름 맞춰줌
+	parDiv.classList.add('hidden');
+	desktop.appendChild(parDiv);
+	modalContentDiv = document.createElement('div');
+	modalContentDiv.setAttribute('class', 'modelContent');
+	parDiv.append(modalContentDiv);
+	divHea = document.createElement('div');
+	divHea.setAttribute('class', 'divHea');
+	count++;
+	divHea.textContent = '머리' + count;
+	pCon = document.createElement('p');
+	closeBtn = document.createElement('button');
+	pCon.textContent = '나는 모달!';
+	closeBtn.textContent = '닫기';
+	modalContentDiv.append(divHea, pCon, closeBtn);
+
+	function displayModal() {
+		parDiv.classList.toggle('hidden');
+		// console.log('토글토글');
+	};
+
+	function folderImgClick(e) {
+		e.addEventListener('click', displayModal);
+		console.log('이미지 배열에서 작동중!');
+	};
+
+	// function removeClose(){
+	//     parDiv.parentNode.removeChild(parDiv);
+	// };
+
+	closeBtn.addEventListener('click', displayModal);
+	// closeBtn.addEventListener('click', removeClose);
 };
 
 
