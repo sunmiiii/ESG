@@ -63,14 +63,16 @@ class folder {
 		// 	})(j);
 		// }
 
-
-
 		folderArr.forEach(function(c){
 			c.addEventListener('click',function(){
-				console.log(c.className)
+				console.log(c.className);
+				/** [^0-9]는 숫자가 아닌 문자들을 의미하는 패턴이며, 
+				    g는 문자열에서 모든 패턴을 찾으라는 의미 */
 				const num = /[^0-9]/g;
+				/** num 해당하는 모든 패턴을 찾아서 ""으로 변환
+				 	숫자가 아닌 문자들이 모두 제거 */
 				let index = c.className.replace(num, "");
-				console.log(modalArr[index])
+				console.log(modalArr[index]);
 				modalArr[index].classList.remove('hidden');
 				let close = modalArr[index].children[0].lastChild;
 				close.addEventListener('click',function(){
@@ -128,6 +130,7 @@ function modalCreate() {
 	parDiv.setAttribute('class', 'modal' + count);
 	parDiv.classList.add('folderImg' + count); // 이미지 생성시 클래스 이름 맞춰줌
 	parDiv.classList.add('hidden');
+	parDiv.classList.add('modalCss');
 	desktop.appendChild(parDiv);
 	modalContentDiv = document.createElement('div');
 	modalContentDiv.setAttribute('class', 'modelContent');
