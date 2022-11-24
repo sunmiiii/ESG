@@ -18,6 +18,9 @@ let modalContentDiv;
 let divHea;
 let pCon;
 let closeBtn;
+let folderArr=[];
+let modalArr=[];
+let closeArr=[];
 let count = 0;
 
 let body = document.querySelector('body');
@@ -42,11 +45,52 @@ class folder {
 			folderImg.setAttribute('class', 'folderImg' + i);
 			imgDiv.append(folderImg);
 			modalCreate();
-			console.log(i+'번째 생성중');
-			folderImg.addEventListener('click',function(){
-				parDiv.classList.remove('hidden');
-			});
+			modalArr[i]= parDiv;
+			folderArr[i] = folderImg;
+			console.log(i+'번째 생성중');	
 		}
+		// for(let j = 0; j < this.number; j++){
+		// 	(function(j){
+		// 		folderArr[j].addEventListener('click',function(){
+		// 			closeArr[j]=closeBtn;
+		// 			modalArr[j].classList.remove('hidden');
+		// 			console.log('히든지웠나?'+modalArr);
+		// 			closeArr[j].addEventListener('click',function(){
+		// 				modalArr[j].classList.add('hidden');
+		// 				console.log('히든있냐고!!!!?'+modalArr);
+		// 				});
+		// 			});
+		// 	})(j);
+		// }
+
+
+
+		folderArr.forEach(function(c){
+			c.addEventListener('click',function(){
+				console.log(c.className)
+				const num = /[^0-9]/g;
+				let index = c.className.replace(num, "");
+				console.log(modalArr[index])
+				modalArr[index].classList.remove('hidden');
+				let close = modalArr[index].children[0].lastChild;
+				close.addEventListener('click',function(){
+					modalArr[index].classList.add('hidden');
+				})
+			})
+		})
+		// for(let j = 0; j < this.number; j++){
+		// 	(function(j){
+		// 		folderArr[j].addEventListener('click',function(){
+		// 			closeArr[j]=closeBtn;
+		// 			modalArr[j].classList.remove('hidden');
+		// 			console.log('히든지웠나?'+modalArr);
+		// 			closeArr[j].addEventListener('click',function(){
+		// 				modalArr[j].classList.add('hidden');
+		// 				console.log('히든있냐고!!!!?'+modalArr);
+		// 				});
+		// 			});
+		// 	})(j);
+		// }
 	};
 		// let num = 0;
 		// imgs.forEach(function (e) {
@@ -98,21 +142,21 @@ function modalCreate() {
 	closeBtn.textContent = '닫기';
 	modalContentDiv.append(divHea, pCon, closeBtn);
 
-	function displayModal() {
-		parDiv.classList.toggle('hidden');
-		// console.log('토글토글');
-	};
+	// function displayModal() {
+	// 	parDiv.classList.toggle('hidden');
+	// 	console.log(this);
+	// };
 
-	function folderImgClick(e) {
-		e.addEventListener('click', displayModal);
-		console.log('이미지 배열에서 작동중!');
-	};
+	// function folderImgClick(e) {
+	// 	e.addEventListener('click', displayModal);
+	// 	console.log('이미지 배열에서 작동중!');
+	// };
 
 	// function removeClose(){
 	//     parDiv.parentNode.removeChild(parDiv);
 	// };
 
-	closeBtn.addEventListener('click', displayModal);
+	//closeBtn.addEventListener('click', displayModal);
 	// closeBtn.addEventListener('click', removeClose);
 };
 
